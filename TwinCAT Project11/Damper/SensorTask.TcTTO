@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <Task Name="SensorTask" Id="{642f9dfb-d154-4671-9ac8-632863e445db}">
+    <!--CycleTime in micro seconds.-->
+    <CycleTime>10000</CycleTime>
+    <Priority>30</Priority>
+    <PouCall>
+      <Name>P_ReadSesnors</Name>
+    </PouCall>
+    <TaskFBGuid>{ebd5a7df-1efe-4452-8bdb-404ff587c511}</TaskFBGuid>
+    <Fb_init>{7e578689-e1b5-4217-8f71-90d392da9691}</Fb_init>
+    <Fb_exit>{6f7d1f2d-fc6a-4c2f-af8d-872be44ef4c9}</Fb_exit>
+    <CycleUpdate>{f44b3bb8-5284-42ba-8592-8274c1f6d26c}</CycleUpdate>
+    <PostCycleUpdate>{b6a95cb9-9b2d-49aa-93dd-dbb9484b634f}</PostCycleUpdate>
+  </Task>
+</TcPlcObject>

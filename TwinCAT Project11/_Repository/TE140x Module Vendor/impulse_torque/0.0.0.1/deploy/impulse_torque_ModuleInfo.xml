@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TctGeneratedModules>
+   <ModuleInfo CLSID="{5D506776-5C2A-1492-F3CD-C6C20CED2879}" GUID="{5D506776-5C2A-1492-F3CD-C6C20CED2879}" LibraryId="TE140x Module Vendor|impulse_torque|0.0.0.1">
+      <BlockDiagram>
+         <Name>impulse_torque</Name>
+         <Identifier>&lt;Root&gt;</Identifier>
+         <Type>root</Type>
+         <Position h="0" w="0" x="0" y="0"/>
+         <BlockDesign/>
+         <State Category="Internal signals" Name="Enabled Subsystem/Pulse Generator" ReadOnly="true">
+            <GlobalName>impulse_torque_B.PulseGenerator</GlobalName>
+            <AdsIdxOffs>#x82000000</AdsIdxOffs>
+         </State>
+         <State Category="DWork" Name="Enabled Subsystem" ReadOnly="true">
+            <GlobalName>impulse_torque_DW.EnabledSubsystem_MODE</GlobalName>
+            <AdsIdxOffs>#x83000004</AdsIdxOffs>
+         </State>
+         <State Category="DWork" Name="Enabled Subsystem/Pulse Generator" ReadOnly="true">
+            <GlobalName>impulse_torque_DW.clockTickCounter</GlobalName>
+            <AdsIdxOffs>#x83000000</AdsIdxOffs>
+         </State>
+         <Parameter Category="Parameters" Name="Enabled Subsystem/Out1:InitialOutput">
+            <GlobalName>impulse_torque_P.Out1_Y0</GlobalName>
+            <AdsIdxOffs>#x13</AdsIdxOffs>
+         </Parameter>
+         <Parameter Category="Parameters" Name="Enabled Subsystem/Pulse Generator:Amplitude">
+            <GlobalName>impulse_torque_P.PulseGenerator_Amp</GlobalName>
+            <AdsIdxOffs>#x1B</AdsIdxOffs>
+         </Parameter>
+         <Parameter Category="Parameters" Name="Enabled Subsystem/Pulse Generator:PulseWidth">
+            <GlobalName>impulse_torque_P.PulseGenerator_Duty</GlobalName>
+            <AdsIdxOffs>#x2B</AdsIdxOffs>
+         </Parameter>
+         <Parameter Category="Parameters" Name="Enabled Subsystem/Pulse Generator:Period">
+            <GlobalName>impulse_torque_P.PulseGenerator_Period</GlobalName>
+            <AdsIdxOffs>#x23</AdsIdxOffs>
+         </Parameter>
+         <Parameter Category="Parameters" Name="Enabled Subsystem/Pulse Generator:PhaseDelay">
+            <GlobalName>impulse_torque_P.PulseGenerator_PhaseDelay</GlobalName>
+            <AdsIdxOffs>#x33</AdsIdxOffs>
+         </Parameter>
+         <Block>
+            <Name>enable</Name>
+            <Identifier>&lt;Root&gt;/enable</Identifier>
+            <Type>Inport</Type>
+            <Position h="14" w="30" x="960" y="173"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Port" Value="1"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="995" y="180"/>
+               <Name>enable</Name>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="995" y="180"/>
+                  <Point x="1055" y="180"/>
+               </Line>
+               <Signal Category="Input" Name="enable" ReadOnly="true">
+                  <GlobalName>impulse_torque_U.enable</GlobalName>
+                  <AdsIdxOffs>#x80000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Constant</Name>
+            <Identifier>&lt;Root&gt;/Constant</Identifier>
+            <Type>Constant</Type>
+            <Position h="30" w="30" x="960" y="230"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Value" Value="0"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="995" y="245"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="995" y="245"/>
+                  <Point x="1044" y="245"/>
+                  <Point x="1044" y="195"/>
+                  <Point x="1055" y="195"/>
+               </Line>
+            </Port>
+            <Parameter Category="Parameters" Name="Value">
+               <GlobalName>impulse_torque_P.Constant_Value</GlobalName>
+               <AdsIdxOffs>#x3B</AdsIdxOffs>
+            </Parameter>
+         </Block>
+         <Block>
+            <Name>Constant1</Name>
+            <Identifier>&lt;Root&gt;/Constant1</Identifier>
+            <Type>Constant</Type>
+            <Position h="30" w="30" x="855" y="45"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Value" Value="1"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="890" y="60"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="890" y="60"/>
+                  <Point x="895" y="60"/>
+                  <Point x="895" y="45"/>
+                  <Point x="915" y="45"/>
+               </Line>
+            </Port>
+            <Parameter Category="Parameters" Name="Value">
+               <GlobalName>impulse_torque_P.Constant1_Value</GlobalName>
+               <AdsIdxOffs>#x43</AdsIdxOffs>
+            </Parameter>
+         </Block>
+         <Block>
+            <Name>Data Type Conversion</Name>
+            <Identifier>&lt;Root&gt;/Data Type Conversion</Identifier>
+            <Type>DataTypeConversion</Type>
+            <Position h="24" w="55" x="1150" y="168"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1135" y="180"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Switch</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1210" y="180"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1210" y="180"/>
+                  <Point x="1235" y="180"/>
+               </Line>
+               <Signal Category="Output" Name="torque" ReadOnly="true">
+                  <GlobalName>impulse_torque_Y.torque</GlobalName>
+                  <AdsIdxOffs>#x81000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Digital Clock</Name>
+            <Identifier>&lt;Root&gt;/Digital Clock</Identifier>
+            <Type>DigitalClock</Type>
+            <Position h="24" w="65" x="820" y="3"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="890" y="15"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="890" y="15"/>
+                  <Point x="903" y="15"/>
+                  <Point x="903" y="30"/>
+                  <Point x="915" y="30"/>
+               </Line>
+               <Signal Category="Output" Name="DigitalClock" ReadOnly="true">
+                  <GlobalName>impulse_torque_B.DigitalClock</GlobalName>
+                  <AdsIdxOffs>#x82000008</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Enabled
+Subsystem</Name>
+            <Identifier>&lt;S1&gt;</Identifier>
+            <Type>SubSystem</Type>
+            <Position h="42" w="100" x="925" y="89"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1030" y="110"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1030" y="110"/>
+                  <Point x="1043" y="110"/>
+                  <Point x="1043" y="165"/>
+                  <Point x="1055" y="165"/>
+               </Line>
+            </Port>
+            <Port>
+               <Type No="1">Enable</Type>
+               <Position x="975" y="74"/>
+               <Rotation>-1.5708</Rotation>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/GreaterThan</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Output" Name="GreaterThan" ReadOnly="true">
+                  <GlobalName>impulse_torque_B.GreaterThan</GlobalName>
+                  <AdsIdxOffs>#x82000010</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Block>
+               <Name>Enable</Name>
+               <Identifier>&lt;S1&gt;/Enable</Identifier>
+               <Type>EnablePort</Type>
+               <Position h="20" w="20" x="235" y="20"/>
+               <BlockDesign>
+                  <Border>
+                     <svg height="1" width="1"/>
+                  </Border>
+               </BlockDesign>
+            </Block>
+            <Block>
+               <Name>Pulse
+Generator</Name>
+               <Identifier>&lt;S1&gt;/Pulse
+Generator</Identifier>
+               <Type>DiscretePulseGenerator</Type>
+               <Position h="32" w="30" x="235" y="94"/>
+               <BlockDesign>
+                  <Border>
+                     <svg height="1" width="1"/>
+                  </Border>
+               </BlockDesign>
+               <Port>
+                  <Type No="1">Outport</Type>
+                  <Position x="270" y="110"/>
+                  <IsConnected>1</IsConnected>
+                  <Line>
+                     <Point x="270" y="110"/>
+                     <Point x="355" y="110"/>
+                  </Line>
+               </Port>
+            </Block>
+            <Block>
+               <Name>Out1</Name>
+               <Identifier>&lt;S1&gt;/Out1</Identifier>
+               <Type>Outport</Type>
+               <Position h="14" w="30" x="360" y="103"/>
+               <BlockDesign>
+                  <Border>
+                     <svg height="1" width="1"/>
+                  </Border>
+                  <Image>
+                     <Placeholder Name="Port" Value="1"/>
+                  </Image>
+               </BlockDesign>
+               <Port>
+                  <Type No="1">Inport</Type>
+                  <Position x="345" y="110"/>
+                  <Name>Out1</Name>
+                  <IsConnected>1</IsConnected>
+                  <Source>
+                     <BlockIdentifier>&lt;S1&gt;/Pulse
+Generator</BlockIdentifier>
+                     <PortType>Outport</PortType>
+                     <PortNo>1</PortNo>
+                  </Source>
+               </Port>
+            </Block>
+         </Block>
+         <Block>
+            <Name>GreaterThan</Name>
+            <Identifier>&lt;Root&gt;/GreaterThan</Identifier>
+            <Type>RelationalOperator</Type>
+            <Position h="31" w="30" x="920" y="22"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Operator" Value="&lt;"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="905" y="30"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Digital Clock</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Output" Name="DigitalClock" ReadOnly="true">
+                  <GlobalName>impulse_torque_B.DigitalClock</GlobalName>
+                  <AdsIdxOffs>#x82000008</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="2">Inport</Type>
+               <Position x="905" y="45"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Constant1</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="955" y="40"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="955" y="40"/>
+                  <Point x="975" y="40"/>
+                  <Point x="975" y="84"/>
+               </Line>
+               <Signal Category="Output" Name="GreaterThan" ReadOnly="true">
+                  <GlobalName>impulse_torque_B.GreaterThan</GlobalName>
+                  <AdsIdxOffs>#x82000010</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Switch</Name>
+            <Identifier>&lt;Root&gt;/Switch</Identifier>
+            <Type>Switch</Type>
+            <Position h="40" w="50" x="1060" y="160"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1045" y="165"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;S1&gt;</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="2">Inport</Type>
+               <Position x="1045" y="180"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/enable</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Input" Name="enable" ReadOnly="true">
+                  <GlobalName>impulse_torque_U.enable</GlobalName>
+                  <AdsIdxOffs>#x80000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="3">Inport</Type>
+               <Position x="1045" y="195"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Constant</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1115" y="180"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1115" y="180"/>
+                  <Point x="1145" y="180"/>
+               </Line>
+            </Port>
+            <Parameter Category="Parameters" Name="Threshold">
+               <GlobalName>impulse_torque_P.Switch_Threshold</GlobalName>
+               <AdsIdxOffs>#x4B</AdsIdxOffs>
+            </Parameter>
+         </Block>
+         <Block>
+            <Name>torque</Name>
+            <Identifier>&lt;Root&gt;/torque</Identifier>
+            <Type>Outport</Type>
+            <Position h="14" w="30" x="1240" y="173"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Port" Value="1"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1225" y="180"/>
+               <Name>torque</Name>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Data Type Conversion</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Output" Name="torque" ReadOnly="true">
+                  <GlobalName>impulse_torque_Y.torque</GlobalName>
+                  <AdsIdxOffs>#x81000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <SubsystemHierarchy>
+            <Subsystem>
+               <ID>&lt;Root&gt;</ID>
+            </Subsystem>
+            <Subsystem>
+               <ID>&lt;S1&gt;</ID>
+               <Parent>&lt;Root&gt;</Parent>
+            </Subsystem>
+         </SubsystemHierarchy>
+         <DebugInfo/>
+      </BlockDiagram>
+      <DefaultValues>
+         <Value>
+            <Name>TaskOid</Name>
+         </Value>
+         <Value>
+            <Name>TaskPriority</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TaskCycleTimeNs</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TaskPort</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TaskSortOrder</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TraceLevelMax</Name>
+            <EnumText>tlInfo</EnumText>
+         </Value>
+         <Value>
+            <Name>ModuleCaller</Name>
+            <EnumText>CyclicTask</EnumText>
+         </Value>
+         <Value>
+            <Name>CallerVerification</Name>
+            <EnumText>Default</EnumText>
+         </Value>
+         <Value>
+            <Name>StepSizeAdaptation</Name>
+            <EnumText>RequireMatchingTaskCycleTime</EnumText>
+         </Value>
+         <Value>
+            <Name>ExecutionSequence</Name>
+            <EnumText>UpdateBeforeOutputMapping</EnumText>
+         </Value>
+         <Value>
+            <Name>Execute</Name>
+            <EnumText>TRUE</EnumText>
+         </Value>
+         <Value>
+            <Name>AccessLockState</Name>
+            <EnumText>TCOM_STATE_OP</EnumText>
+         </Value>
+         <Value>
+            <Name>InitExceptionHandling</Name>
+            <EnumText>CallerExceptions</EnumText>
+         </Value>
+         <Value>
+            <Name>UpdateExceptionHandling</Name>
+            <EnumText>CallerExceptions</EnumText>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelName</Name>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>impulse_torque_P_Sharing</Name>
+            <EnumText>Define</EnumText>
+         </Value>
+         <Value>
+            <Name>impulse_torque_P.Out1_Y0</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>impulse_torque_P.PulseGenerator_Amp</Name>
+            <Value>300.0</Value>
+         </Value>
+         <Value>
+            <Name>impulse_torque_P.PulseGenerator_Period</Name>
+            <Value>200.0</Value>
+         </Value>
+         <Value>
+            <Name>impulse_torque_P.PulseGenerator_Duty</Name>
+            <Value>20.0</Value>
+         </Value>
+         <Value>
+            <Name>impulse_torque_P.PulseGenerator_PhaseDelay</Name>
+            <Value>0.1</Value>
+         </Value>
+         <Value>
+            <Name>impulse_torque_P.Constant_Value</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>impulse_torque_P.Constant1_Value</Name>
+            <Value>1.0</Value>
+         </Value>
+         <Value>
+            <Name>impulse_torque_P.Switch_Threshold</Name>
+            <Value>0.0</Value>
+         </Value>
+      </DefaultValues>
+      <ModuleParameters>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="WRITE">
+            <Name>CallBy</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="WRITE">
+            <Name>ExecutionSequence</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="WRITE">
+            <Name>StepSizeAdaptation</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>Initialized</Name>
+            <Category>Monitoring</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>CycleUpdateExecuted</Name>
+            <Category>Monitoring</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="" StartupValueAccess="">
+            <Name>ModuleInfo</Name>
+            <Category>Module identification</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>ModuleBuildInfo</Name>
+            <Category>Module identification</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="WRITE" StartupValueAccess="WRITE">
+            <Name>Execute</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>SimulinkTime</Name>
+            <Category>Monitoring</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>AccessLockState</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+      </ModuleParameters>
+      <BlockDesigns>
+         <BlockDesign>
+            <Type>Inport</Type>
+            <Border>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-1022.3622)">
+                     <rect height="28.121166" id="rect2996" ry="14.060583" style="fill:none;stroke:#000000;stroke-width:1.87883461;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="58.121166" x="0.9394173" y="1023.3016"/>
+                  </g>
+               </svg>
+            </Border>
+            <Image>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <text id="text3010" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="30" xml:space="preserve" y="15"><tspan id="tspan3012" x="30" y="15">Block::Port</tspan></text></svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Constant</Type>
+            <Image>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1">
+                     <text id="text3001" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="50" xml:space="preserve" y="50"><tspan id="tspan3003" x="50" y="50">ADS::Value Block::Value</tspan></text></g>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type SubType="Compare To Constant">SubSystem</Type>
+            <Image>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1">
+                     <text id="text3001" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="50" xml:space="preserve" y="50"><tspan id="tspan3003" x="50" y="50">Block::Operator</tspan></text></g>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Outport</Type>
+            <Border>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-1022.3622)">
+                     <rect height="28.121166" id="rect2996" ry="14.060583" style="fill:none;stroke:#000000;stroke-width:1.87883461;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="58.121166" x="0.9394173" y="1023.3016"/>
+                  </g>
+               </svg>
+            </Border>
+            <Image>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <text id="text3010" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="30" xml:space="preserve" y="15"><tspan id="tspan3012" x="30" y="15">Block::Port</tspan></text></svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>RelationalOperator</Type>
+            <Image>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1">
+                     <text id="text3001" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="50" xml:space="preserve" y="50"><tspan id="tspan3003" x="50" y="50">Block::Operator</tspan></text></g>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Switch</Type>
+            <Image>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-952.36218)">
+                     <rect height="6.1243801" id="rect3006" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="6.1871104" x="41.154118" y="966.15198"/>
+                     <path d="m 41.423146,968.61373 c -13.666931,0 -27.333897,-2e-5 -41.0008279,0" id="path3776" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 44.920178,968.55368 35.508632,34.52472 18.651024,0" id="path3778" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 16.764368,993.41146 0,20.65474" id="path3780" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 16.854023,1003.2585 -16.49895482,0" id="path3782" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 0.35506818,1038.8039 41.15773282,0" id="path3784" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <rect height="6.1243801" id="rect3786" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="5.9181056" x="41.423149" y="1035.1414"/>
+                  </g>
+               </svg>
+            </Image>
+         </BlockDesign>
+      </BlockDesigns>
+   </ModuleInfo>
+</TctGeneratedModules>

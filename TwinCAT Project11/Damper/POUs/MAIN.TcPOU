@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="MAIN" Id="{13a96fbb-10e3-44e8-a51b-e00ae15eb7c3}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	drive : AXIS_REF;
+	
+	fbMCReset : MC_Reset;
+	fbMCPower : MC_Power;
+	fbMCSetPosition : MC_SetPosition;
+	
+	bRun AT %Q* : BOOL := FALSE;
+	bStarted : BOOL := FALSE;
+	
+	iTorqueOffset AT %Q* : INT := -3;
+	iActualTorque AT %I* : INT;
+	iActualTorqueConv : LREAL; // Nm
+	iMaxRatedTorque : LREAL := 0.00768; // Nm
+	
+	iMaxVel : INT  := 300;
+	iMaxPos : REAL := 182;
+	iMinPos : REAL := 005;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[drive.ReadStatus();
+fbMCSetPosition(Axis:=drive, Execute:=TRUE, Position:=0);
+
+iActualTorqueConv := INT_TO_LREAL(iActualTorque) / 1000 * iMaxRatedTorque;
+
+IF ABS(drive.NcToPlc.ActVelo) > iMaxVel THEN
+	bRun := FALSE;
+END_IF
+
+IF NOT bStarted THEN
+	fbMCReset(Axis:=drive);
+	fbMCPower(Axis:=drive, Enable:= TRUE, Enable_Positive:=TRUE, Enable_Negative:=TRUE);
+	// if motor powered, set to started
+	IF fbMCPower.Status THEN
+		bStarted := TRUE;
+	END_IF
+ELSE
+	iMaxVel := iMaxVel; // pass statement
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="223" Count="0" />
+      <LineId Id="341" Count="0" />
+      <LineId Id="340" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="29" Count="2" />
+      <LineId Id="225" Count="0" />
+      <LineId Id="178" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="271" Count="0" />
+      <LineId Id="42" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

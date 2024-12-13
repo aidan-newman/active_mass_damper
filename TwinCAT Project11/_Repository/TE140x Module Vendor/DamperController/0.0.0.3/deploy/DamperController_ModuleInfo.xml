@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TctGeneratedModules>
+   <ModuleInfo CLSID="{B7C9864D-6BA8-DFBC-855D-DD145C58DFE7}" GUID="{B7C9864D-6BA8-DFBC-855D-DD145C58DFE7}" LibraryId="TE140x Module Vendor|DamperController|0.0.0.3">
+      <BlockDiagram>
+         <Name>DamperController</Name>
+         <Identifier>&lt;Root&gt;</Identifier>
+         <Type>root</Type>
+         <Position h="0" w="0" x="0" y="0"/>
+         <BlockDesign/>
+         <Block>
+            <Name>acc</Name>
+            <Identifier>&lt;Root&gt;/acc</Identifier>
+            <Type>Inport</Type>
+            <Position h="14" w="30" x="1295" y="393"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Port" Value="1"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1330" y="400"/>
+               <Name>acc</Name>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1330" y="400"/>
+                  <Point x="1395" y="400"/>
+               </Line>
+               <Signal Category="Input" Name="acc" ReadOnly="true">
+                  <GlobalName>DamperController_U.acc</GlobalName>
+                  <AdsIdxOffs>#x80000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>enable</Name>
+            <Identifier>&lt;Root&gt;/enable</Identifier>
+            <Type>Inport</Type>
+            <Position h="14" w="30" x="1215" y="293"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Port" Value="2"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1250" y="300"/>
+               <Name>enable</Name>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1250" y="300"/>
+                  <Point x="1280" y="300"/>
+               </Line>
+               <Signal Category="Input" Name="enable" ReadOnly="true">
+                  <GlobalName>DamperController_U.enable</GlobalName>
+                  <AdsIdxOffs>#x80000008</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Constant</Name>
+            <Identifier>&lt;Root&gt;/Constant</Identifier>
+            <Type>Constant</Type>
+            <Position h="30" w="30" x="1215" y="325"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Value" Value="0"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1250" y="340"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1250" y="340"/>
+                  <Point x="1265" y="340"/>
+                  <Point x="1265" y="315"/>
+                  <Point x="1280" y="315"/>
+               </Line>
+            </Port>
+            <Parameter Category="Parameters" Name="Value">
+               <GlobalName>DamperController_P.Constant_Value</GlobalName>
+               <AdsIdxOffs>#x4B</AdsIdxOffs>
+            </Parameter>
+         </Block>
+         <Block>
+            <Name>Kalman</Name>
+            <Identifier>&lt;S1&gt;</Identifier>
+            <Type>SubSystem</Type>
+            <Position h="62" w="55" x="1400" y="354"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1385" y="370"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Unary Minus</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Output" Name="UnaryMinus" ReadOnly="true">
+                  <GlobalName>DamperController_B.UnaryMinus</GlobalName>
+                  <AdsIdxOffs>#x82000020</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="2">Inport</Type>
+               <Position x="1385" y="400"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/acc</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Input" Name="acc" ReadOnly="true">
+                  <GlobalName>DamperController_U.acc</GlobalName>
+                  <AdsIdxOffs>#x80000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1460" y="385"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1460" y="385"/>
+                  <Point x="1539" y="385"/>
+                  <Point x="1539" y="430"/>
+                  <Line>
+                     <Point x="1539" y="430"/>
+                     <Point x="1560" y="430"/>
+                  </Line>
+                  <Line>
+                     <Point x="1539" y="430"/>
+                     <Point x="1539" y="475"/>
+                     <Point x="1330" y="475"/>
+                  </Line>
+               </Line>
+            </Port>
+            <State Category="Internal signals" Name="Observer/Add" ReadOnly="true">
+               <GlobalName>DamperController_B.Add</GlobalName>
+               <AdsIdxOffs>#x82000028</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="Observer/A[k]*xhat[k|k-1]" ReadOnly="true">
+               <GlobalName>DamperController_B.Akxhatkk1</GlobalName>
+               <AdsIdxOffs>#x82000070</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="Observer/B[k]*u[k]" ReadOnly="true">
+               <GlobalName>DamperController_B.Bkuk</GlobalName>
+               <AdsIdxOffs>#x82000080</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="Observer/MeasurementUpdate/D[k]*u[k]" ReadOnly="true">
+               <GlobalName>DamperController_B.Dkuk</GlobalName>
+               <AdsIdxOffs>#x82000090</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="MemoryX" ReadOnly="true">
+               <GlobalName>DamperController_B.MemoryX</GlobalName>
+               <AdsIdxOffs>#x82000010</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="CovarianceOutputConfigurator/decideOutput/SqrtUsedFcn" ReadOnly="true">
+               <GlobalName>DamperController_B.P</GlobalName>
+               <AdsIdxOffs>#x82000050</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="Observer/MeasurementUpdate/Product3" ReadOnly="true">
+               <GlobalName>DamperController_B.Product3</GlobalName>
+               <AdsIdxOffs>#x82000040</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="Observer/MeasurementUpdate/Sum" ReadOnly="true">
+               <GlobalName>DamperController_B.Sum</GlobalName>
+               <AdsIdxOffs>#x82000098</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="X0" ReadOnly="true">
+               <GlobalName>DamperController_B.X0</GlobalName>
+               <AdsIdxOffs>#x82000000</AdsIdxOffs>
+            </State>
+            <State Category="DWork" Name="Observer/MeasurementUpdate" ReadOnly="true">
+               <GlobalName>DamperController_DW.MeasurementUpdate_MODE</GlobalName>
+               <AdsIdxOffs>#x84000004</AdsIdxOffs>
+            </State>
+            <State Category="DWork" Name="MemoryX" ReadOnly="true">
+               <GlobalName>DamperController_DW.MemoryX_IWORK</GlobalName>
+               <AdsIdxOffs>#x84000000</AdsIdxOffs>
+            </State>
+            <Parameter Category="Parameters" Name="A:Value">
+               <GlobalName>DamperController_P.A_Value</GlobalName>
+               <AdsIdxOffs>#x53</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="B:Value">
+               <GlobalName>DamperController_P.B_Value</GlobalName>
+               <AdsIdxOffs>#x73</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="C:Value">
+               <GlobalName>DamperController_P.C_Value</GlobalName>
+               <AdsIdxOffs>#x83</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="CalculatePL/CovarianceZ:Value">
+               <GlobalName>DamperController_P.CovarianceZ_Value</GlobalName>
+               <AdsIdxOffs>#x93</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="D:Value">
+               <GlobalName>DamperController_P.D_Value</GlobalName>
+               <AdsIdxOffs>#xC3</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="Enable:Value">
+               <GlobalName>DamperController_P.Enable_Value</GlobalName>
+               <AdsIdxOffs>#xCC</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="CalculatePL/KalmanGainL:Value">
+               <GlobalName>DamperController_P.KalmanGainL_Value</GlobalName>
+               <AdsIdxOffs>#xB3</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="Observer/MeasurementUpdate/L*(y[k]-yhat[k|k-1]):InitialOutput">
+               <GlobalName>DamperController_P.Lykyhatkk1_Y0</GlobalName>
+               <AdsIdxOffs>#x23</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="X0:Value">
+               <GlobalName>DamperController_P.X0_Value</GlobalName>
+               <AdsIdxOffs>#x3B</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="CovarianceOutputConfigurator/decideOutput/isSqrtUsed:Value">
+               <GlobalName>DamperController_P.isSqrtUsed_Value</GlobalName>
+               <AdsIdxOffs>#xCB</AdsIdxOffs>
+            </Parameter>
+            <State Category="ContState" Name="MemoryX" ReadOnly="true">
+               <GlobalName>DamperController_X.MemoryX_CSTATE</GlobalName>
+               <AdsIdxOffs>#x83000000</AdsIdxOffs>
+            </State>
+         </Block>
+         <Block>
+            <Name>LQR</Name>
+            <Identifier>&lt;Root&gt;/LQR</Identifier>
+            <Type>Gain</Type>
+            <Position h="46" w="80" x="1245" y="452"/>
+            <BlockDesign>
+               <Rotation>180</Rotation>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Gain" Value="K"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1340" y="475"/>
+               <Rotation>3.1416</Rotation>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;S1&gt;</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1240" y="475"/>
+               <Rotation>3.1416</Rotation>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1240" y="475"/>
+                  <Point x="1065" y="475"/>
+                  <Point x="1065" y="315"/>
+                  <Point x="1075" y="315"/>
+               </Line>
+            </Port>
+            <Parameter Category="Parameters" Name="Gain">
+               <GlobalName>DamperController_P.K</GlobalName>
+               <AdsIdxOffs>#x13</AdsIdxOffs>
+            </Parameter>
+         </Block>
+         <Block>
+            <Name>Saturation</Name>
+            <Identifier>&lt;Root&gt;/Saturation</Identifier>
+            <Type>Saturate</Type>
+            <Position h="30" w="30" x="1215" y="245"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1200" y="260"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Unary Minus</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Output" Name="UnaryMinus" ReadOnly="true">
+                  <GlobalName>DamperController_B.UnaryMinus</GlobalName>
+                  <AdsIdxOffs>#x82000020</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1250" y="260"/>
+               <Name>u</Name>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Name>u</Name>
+                  <Point x="1250" y="260"/>
+                  <Point x="1260" y="260"/>
+                  <Point x="1260" y="285"/>
+                  <Point x="1280" y="285"/>
+               </Line>
+               <Signal Category="Output" Name="u" ReadOnly="true">
+                  <GlobalName>DamperController_B.u</GlobalName>
+                  <AdsIdxOffs>#x82000038</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Parameter Category="Parameters" Name="LowerLimit">
+               <GlobalName>DamperController_P.Saturation_LowerSat</GlobalName>
+               <AdsIdxOffs>#x33</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="UpperLimit">
+               <GlobalName>DamperController_P.Saturation_UpperSat</GlobalName>
+               <AdsIdxOffs>#x2B</AdsIdxOffs>
+            </Parameter>
+         </Block>
+         <Block>
+            <Name>Switch</Name>
+            <Identifier>&lt;Root&gt;/Switch</Identifier>
+            <Type>Switch</Type>
+            <Position h="40" w="50" x="1285" y="280"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1270" y="285"/>
+               <Name>u</Name>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Saturation</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Output" Name="u" ReadOnly="true">
+                  <GlobalName>DamperController_B.u</GlobalName>
+                  <AdsIdxOffs>#x82000038</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="2">Inport</Type>
+               <Position x="1270" y="300"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/enable</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Input" Name="enable" ReadOnly="true">
+                  <GlobalName>DamperController_U.enable</GlobalName>
+                  <AdsIdxOffs>#x80000008</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="3">Inport</Type>
+               <Position x="1270" y="315"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Constant</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1340" y="300"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1340" y="300"/>
+                  <Point x="1370" y="300"/>
+               </Line>
+               <Signal Category="Output" Name="torque" ReadOnly="true">
+                  <GlobalName>DamperController_Y.torque</GlobalName>
+                  <AdsIdxOffs>#x81000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Terminator1</Name>
+            <Identifier>&lt;Root&gt;/Terminator1</Identifier>
+            <Type>Terminator</Type>
+            <Position h="20" w="20" x="1565" y="420"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1550" y="430"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;S1&gt;</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Unary Minus</Name>
+            <Identifier>&lt;Root&gt;/Unary Minus</Identifier>
+            <Type>UnaryMinus</Type>
+            <Position h="30" w="30" x="1080" y="300"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1065" y="315"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/LQR</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1115" y="315"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1115" y="315"/>
+                  <Point x="1147" y="315"/>
+                  <Line>
+                     <Point x="1147" y="315"/>
+                     <Point x="1147" y="370"/>
+                     <Point x="1395" y="370"/>
+                  </Line>
+                  <Line>
+                     <Point x="1147" y="315"/>
+                     <Point x="1147" y="260"/>
+                     <Point x="1210" y="260"/>
+                  </Line>
+               </Line>
+               <Signal Category="Output" Name="UnaryMinus" ReadOnly="true">
+                  <GlobalName>DamperController_B.UnaryMinus</GlobalName>
+                  <AdsIdxOffs>#x82000020</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>torque</Name>
+            <Identifier>&lt;Root&gt;/torque</Identifier>
+            <Type>Outport</Type>
+            <Position h="14" w="30" x="1375" y="293"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Port" Value="1"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1360" y="300"/>
+               <Name>torque</Name>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Switch</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Output" Name="torque" ReadOnly="true">
+                  <GlobalName>DamperController_Y.torque</GlobalName>
+                  <AdsIdxOffs>#x81000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <SubsystemHierarchy>
+            <Subsystem>
+               <ID>&lt;Root&gt;</ID>
+            </Subsystem>
+            <Subsystem>
+               <ID>&lt;S1&gt;</ID>
+               <Parent>&lt;Root&gt;</Parent>
+            </Subsystem>
+         </SubsystemHierarchy>
+         <DebugInfo>
+            <SourceFile>
+               <Name>DamperController.cpp</Name>
+               <Path>C:\Users\I3-Project\Downloads\DamperController_tcgrt\DamperController.cpp</Path>
+               <CodeSection CommentStartLine="156" EndLine="160" Method="DamperController_step" StartLine="157">
+                  <Block>&lt;S1&gt;/X0</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="161" EndLine="166" Method="DamperController_step" StartLine="162">
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="167" EndLine="170" Method="DamperController_step" StartLine="168">
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="171" EndLine="178" Method="DamperController_step" StartLine="175">
+                  <Block>&lt;S53&gt;/Sum</Block>
+                  <Block>&lt;Root&gt;/LQR</Block>
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="179" EndLine="181" Method="DamperController_step" StartLine="180">
+                  <Block>&lt;Root&gt;/Unary Minus</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="182" EndLine="183" Method="DamperController_step" StartLine="183">
+                  <Block>&lt;Root&gt;/Switch</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="184" EndLine="186" Method="DamperController_step" StartLine="185">
+                  <Block>&lt;Root&gt;/Saturation</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="187" EndLine="190" Method="DamperController_step" StartLine="188">
+                  <Block>&lt;Root&gt;/Saturation</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="191" EndLine="193" Method="DamperController_step" StartLine="192">
+                  <Block>&lt;Root&gt;/Saturation</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="194" EndLine="197" Method="DamperController_step" StartLine="195">
+                  <Block>&lt;Root&gt;/Saturation</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="198" EndLine="199" Method="DamperController_step" StartLine="199">
+                  <Block>&lt;Root&gt;/Saturation</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="200" EndLine="202" Method="DamperController_step" StartLine="201">
+                  <Block>&lt;S53&gt;/Sum</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="203" EndLine="208" Method="DamperController_step" StartLine="206">
+                  <Block>&lt;S53&gt;/Sum</Block>
+                  <Block>&lt;Root&gt;/Constant</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="209" EndLine="210" Method="DamperController_step" StartLine="210">
+                  <Block>&lt;Root&gt;/Switch</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="211" EndLine="213" Method="DamperController_step" StartLine="212">
+                  <Block>&lt;Root&gt;/torque</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="214" EndLine="217" Method="DamperController_step" StartLine="217">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+                  <Block>&lt;S53&gt;/Enable</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="218" EndLine="240" Method="DamperController_step" StartLine="222">
+                  <Block>&lt;S51&gt;/SqrtUsedFcn</Block>
+                  <Block>&lt;S2&gt;/CovarianceZ</Block>
+                  <Block>&lt;S51&gt;/isSqrtUsed</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="241" EndLine="242" Method="DamperController_step" StartLine="242">
+                  <Block>&lt;S51&gt;/SqrtUsedFcn</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="243" EndLine="246" Method="DamperController_step" StartLine="244">
+                  <Block>&lt;S1&gt;/Enable</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="247" EndLine="254" Method="DamperController_step" StartLine="250">
+                  <Block>&lt;S53&gt;/Product3</Block>
+                  <Block>&lt;S53&gt;/L*(y[k]-yhat[k|k-1])</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="255" EndLine="258" Method="DamperController_step" StartLine="256">
+                  <Block>&lt;S1&gt;/Enable</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="259" EndLine="260" Method="DamperController_step" StartLine="260">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="261" EndLine="267" Method="DamperController_step" StartLine="264">
+                  <Block>&lt;S22&gt;/A[k]*xhat[k|k-1]</Block>
+                  <Block>&lt;S1&gt;/A</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="268" EndLine="273" Method="DamperController_step" StartLine="271">
+                  <Block>&lt;S22&gt;/B[k]*u[k]</Block>
+                  <Block>&lt;S1&gt;/B</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="274" EndLine="280" Method="DamperController_step" StartLine="277">
+                  <Block>&lt;S22&gt;/A[k]*xhat[k|k-1]</Block>
+                  <Block>&lt;S1&gt;/A</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="281" EndLine="286" Method="DamperController_step" StartLine="284">
+                  <Block>&lt;S22&gt;/B[k]*u[k]</Block>
+                  <Block>&lt;S1&gt;/B</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="287" EndLine="290" Method="DamperController_step" StartLine="290">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+                  <Block>&lt;S53&gt;/Enable</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="291" EndLine="298" Method="DamperController_step" StartLine="295">
+                  <Block>&lt;S53&gt;/Sum</Block>
+                  <Block>&lt;S1&gt;/C</Block>
+                  <Block>&lt;S53&gt;/C[k]*xhat[k|k-1]</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="299" EndLine="304" Method="DamperController_step" StartLine="302">
+                  <Block>&lt;S53&gt;/D[k]*u[k]</Block>
+                  <Block>&lt;S1&gt;/D</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="305" EndLine="310" Method="DamperController_step" StartLine="308">
+                  <Block>&lt;S53&gt;/Sum</Block>
+                  <Block>&lt;S53&gt;/Add1</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="311" EndLine="319" Method="DamperController_step" StartLine="314">
+                  <Block>&lt;S53&gt;/Product3</Block>
+                  <Block>&lt;S2&gt;/KalmanGainL</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="320" EndLine="321" Method="DamperController_step" StartLine="321">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="322" EndLine="330" Method="DamperController_step" StartLine="326">
+                  <Block>&lt;S22&gt;/Add</Block>
+                  <Block>&lt;S22&gt;/B[k]*u[k]</Block>
+                  <Block>&lt;S53&gt;/Product3</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="331" EndLine="332" Method="DamperController_step" StartLine="332">
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="382" EndLine="386" Method="DamperController_derivatives" StartLine="383">
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="397" EndLine="400" Method="DamperController_initialize" StartLine="398">
+                  <Block>&lt;S1&gt;/X0</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="401" EndLine="403" Method="DamperController_initialize" StartLine="402">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="404" EndLine="405" Method="DamperController_initialize" StartLine="405">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="406" EndLine="413" Method="DamperController_initialize" StartLine="407">
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="414" EndLine="415" Method="DamperController_initialize" StartLine="415">
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="416" EndLine="416" Method="DamperController_initialize" StartLine="417">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="417" EndLine="422" Method="DamperController_initialize" StartLine="420">
+                  <Block>&lt;S53&gt;/Product3</Block>
+                  <Block>&lt;S53&gt;/L*(y[k]-yhat[k|k-1])</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="423" EndLine="424" Method="DamperController_initialize" StartLine="424">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+               </CodeSection>
+            </SourceFile>
+         </DebugInfo>
+      </BlockDiagram>
+      <DefaultValues>
+         <Value>
+            <Name>TaskOid</Name>
+         </Value>
+         <Value>
+            <Name>TaskPriority</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TaskCycleTimeNs</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TaskPort</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TaskSortOrder</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TraceLevelMax</Name>
+            <EnumText>tlInfo</EnumText>
+         </Value>
+         <Value>
+            <Name>ModuleCaller</Name>
+            <EnumText>CyclicTask</EnumText>
+         </Value>
+         <Value>
+            <Name>CallerVerification</Name>
+            <EnumText>Default</EnumText>
+         </Value>
+         <Value>
+            <Name>StepSizeAdaptation</Name>
+            <EnumText>RequireMatchingTaskCycleTime</EnumText>
+         </Value>
+         <Value>
+            <Name>ExecutionSequence</Name>
+            <EnumText>UpdateBeforeOutputMapping</EnumText>
+         </Value>
+         <Value>
+            <Name>Execute</Name>
+            <EnumText>TRUE</EnumText>
+         </Value>
+         <Value>
+            <Name>AccessLockState</Name>
+            <EnumText>TCOM_STATE_OP</EnumText>
+         </Value>
+         <Value>
+            <Name>InitExceptionHandling</Name>
+            <EnumText>CallerExceptions</EnumText>
+         </Value>
+         <Value>
+            <Name>UpdateExceptionHandling</Name>
+            <EnumText>CallerExceptions</EnumText>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelName</Name>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P_Sharing</Name>
+            <EnumText>Define</EnumText>
+         </Value>
+         <Value>
+            <Name>DamperController_P.K[0]</Name>
+            <Value>2.288161140648985e-05</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.K[1]</Name>
+            <Value>0.009134914665973305</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.Lykyhatkk1_Y0</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.Saturation_UpperSat</Name>
+            <Value>0.002</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.Saturation_LowerSat</Name>
+            <Value>-0.002</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.X0_Value[0]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.X0_Value[1]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.Constant_Value</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.A_Value[0]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.A_Value[1]</Name>
+            <Value>-735.2941176470588</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.A_Value[2]</Name>
+            <Value>1.0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.A_Value[3]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.B_Value[0]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.B_Value[1]</Name>
+            <Value>403.7956793862306</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.C_Value[0]</Name>
+            <Value>735.2941176470588</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.C_Value[1]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.CovarianceZ_Value[0]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.CovarianceZ_Value[1]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.CovarianceZ_Value[2]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.CovarianceZ_Value[3]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.KalmanGainL_Value[0]</Name>
+            <Value>0.2237569453857043</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.KalmanGainL_Value[1]</Name>
+            <Value>0.02469507659595707</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.D_Value</Name>
+            <Value>403.7956793862306</Value>
+         </Value>
+         <Value>
+            <Name>DamperController_P.isSqrtUsed_Value</Name>
+            <EnumText>FALSE</EnumText>
+         </Value>
+         <Value>
+            <Name>DamperController_P.Enable_Value</Name>
+            <EnumText>TRUE</EnumText>
+         </Value>
+      </DefaultValues>
+      <ModuleParameters>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="WRITE">
+            <Name>CallBy</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="WRITE">
+            <Name>ExecutionSequence</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="WRITE">
+            <Name>StepSizeAdaptation</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>Initialized</Name>
+            <Category>Monitoring</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>CycleUpdateExecuted</Name>
+            <Category>Monitoring</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="" StartupValueAccess="">
+            <Name>ModuleInfo</Name>
+            <Category>Module identification</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>ModuleBuildInfo</Name>
+            <Category>Module identification</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="WRITE" StartupValueAccess="WRITE">
+            <Name>Execute</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>SimulinkTime</Name>
+            <Category>Monitoring</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>AccessLockState</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+      </ModuleParameters>
+      <BlockDesigns>
+         <BlockDesign>
+            <Type>Inport</Type>
+            <Border>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-1022.3622)">
+                     <rect height="28.121166" id="rect2996" ry="14.060583" style="fill:none;stroke:#000000;stroke-width:1.87883461;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="58.121166" x="0.9394173" y="1023.3016"/>
+                  </g>
+               </svg>
+            </Border>
+            <Image>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <text id="text3010" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="30" xml:space="preserve" y="15"><tspan id="tspan3012" x="30" y="15">Block::Port</tspan></text></svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Constant</Type>
+            <Image>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1">
+                     <text id="text3001" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="50" xml:space="preserve" y="50"><tspan id="tspan3003" x="50" y="50">ADS::Value Block::Value</tspan></text></g>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Gain</Type>
+            <Border>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-952.36218)">
+                     <path d="M 0,100 0,0 100,50 0,100" id="path3005" style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" transform="translate(0,952.36218)"/>
+                  </g>
+               </svg>
+            </Border>
+            <Image>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1">
+                     <text id="text2991" style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="5" xml:space="preserve" y="50"><tspan id="tspan2993" x="5" y="50">ADS::Gain Block::Gain</tspan></text></g>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Saturate</Type>
+            <Image>
+               <svg height="100" id="svg2" version="1.1" width="100">
+                  <title id="title3802">Saturate</title>
+                  <defs id="defs4"/>
+                  <metadata id="metadata7"/>
+                  <path d="m 21.343889,77.165351 15.019759,0 L 69.631521,24 84,24" id="path3774" style="fill:none;stroke:#000000;stroke-width:0.55226934px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+                  <path d="m 51.778672,20.078738 0,62.598424" id="path3776" style="fill:none;stroke:#000000;stroke-width:0.55226934px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+                  <path d="m 21.739143,50.393698 61.264826,0" id="path3778" style="fill:none;stroke:#000000;stroke-width:0.55226934px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Switch</Type>
+            <Image>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-952.36218)">
+                     <rect height="6.1243801" id="rect3006" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="6.1871104" x="41.154118" y="966.15198"/>
+                     <path d="m 41.423146,968.61373 c -13.666931,0 -27.333897,-2e-5 -41.0008279,0" id="path3776" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 44.920178,968.55368 35.508632,34.52472 18.651024,0" id="path3778" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 16.764368,993.41146 0,20.65474" id="path3780" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 16.854023,1003.2585 -16.49895482,0" id="path3782" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 0.35506818,1038.8039 41.15773282,0" id="path3784" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <rect height="6.1243801" id="rect3786" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="5.9181056" x="41.423149" y="1035.1414"/>
+                  </g>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Terminator</Type>
+            <Image>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-952.36218)">
+                     <g id="g3036" style="stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none">
+                        <path d="m 13.571429,50.357143 66.428571,0" id="path3032" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" transform="translate(0,952.36218)"/>
+                        <path d="m 32.143,26.785714 47.857,0 0,47.5 -47.857,0" id="path3034" style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" transform="translate(0,952.36218)"/>
+                     </g>
+                  </g>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Outport</Type>
+            <Border>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-1022.3622)">
+                     <rect height="28.121166" id="rect2996" ry="14.060583" style="fill:none;stroke:#000000;stroke-width:1.87883461;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="58.121166" x="0.9394173" y="1023.3016"/>
+                  </g>
+               </svg>
+            </Border>
+            <Image>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <text id="text3010" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="30" xml:space="preserve" y="15"><tspan id="tspan3012" x="30" y="15">Block::Port</tspan></text></svg>
+            </Image>
+         </BlockDesign>
+      </BlockDesigns>
+   </ModuleInfo>
+</TctGeneratedModules>

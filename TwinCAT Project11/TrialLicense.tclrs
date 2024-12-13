@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<TcLicenseInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2011/11/TcLicenseInfo">
+	<LicenseInfo>
+		<SystemId>{377371DF-94BD-AFA5-0AC1-F3115434644E}</SystemId>
+		<IssueTime>2024-12-13T08:37:00</IssueTime>
+		<ExpireTime>2024-12-21T00:00:00</ExpireTime>
+		<LicenseKey>d0a19448dd943d36fe0843292be1bf30a8f5931178e0bd2486ea002113f84cad1c628cb07e4acbcc8e260937e8f768c2ce54f80f1fa0ea2aa80411c07c54ad048c840c9c6c06ad4d8ce95bbaaa6f5f8400535600280df866db4f7246b5273eb1f80fac1d5f7a3c4b597b00b2b02616b798b1cf41a640d328a9999ae11be3f8198bbd9653a8b6f52c359470fcdc118c5917e59157246d5d2fcaecf858fedfad9af45d68f3e0d2110b38a798c4b703b3e118ff97075e1e39f16fca38684a1b782164ab08106924ef787e9abccce17e8f9b1c6f306884039fbcfe08837f66cfafae72de2a045041bc58d53b749a40fe4b149f5c39c584004e689f716544c7f0267c</LicenseKey>
+		<License>
+			<LicenseId>{304D006A-8299-4560-AB79-438534B50288}</LicenseId>
+			<Name>TC3 C++</Name>
+			<OrderNo>TC1300</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{2D6F11C0-6F75-4E5D-A07D-D83A5E0C9F10}</LicenseId>
+			<Name>Runtime for MATLAB / Simulink</Name>
+			<OrderNo>TF1400</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{AD7F40C3-F160-4413-83E3-6B7656A795A2}</LicenseId>
+			<Name>TC3 C++ / MatSim</Name>
+			<OrderNo>TC1320</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{AECBCEB9-4222-4369-8961-4A7488DAE203}</LicenseId>
+			<Name>TC3 HVAC</Name>
+			<OrderNo>TF8000</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{FF7D97E4-982F-4ABD-87CE-19164A0571CA}</LicenseId>
+			<Name>TC3 Target For Matlab</Name>
+			<OrderNo>TE1401</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{4C256767-E6E6-4AF5-BD68-9F7ABAD0C200}</LicenseId>
+			<Name>TC3 ADS</Name>
+			<OrderNo>TC1000</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{3FF18E97-7754-401B-93FB-70544DE28A13}</LicenseId>
+			<Name>TC3 IO</Name>
+			<OrderNo>TC1100</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{66689887-CCBD-452C-AC9A-039D997C6E66}</LicenseId>
+			<Name>TC3 PLC</Name>
+			<OrderNo>TC1200</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{A19036CF-A53B-4E3A-99FF-023EF5C4798B}</LicenseId>
+			<Name>TC3 NC PTP Axis</Name>
+			<Instances>10</Instances>
+		</License>
+		<License>
+			<LicenseId>{520DE751-9DB6-47CB-8240-BD5C466E7E64}</LicenseId>
+			<Name>TC3 NC PTP</Name>
+			<OrderNo>TF5000</OrderNo>
+		</License>
+	</LicenseInfo>
+</TcLicenseInfo>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.13">
+  <POU Name="P_ReadSesnors" Id="{e83dad1a-1bca-4649-aeed-6950f3612e99}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_ReadSesnors
+VAR
+	fbReadAcc : FB_ReadAccelerometer;
+	
+	accX AT %Q* : LREAL;
+	accY AT %Q* : LREAL;
+	accZ AT %Q* : LREAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbReadAcc(accX=>accX, accY=>accY, accZ=>accZ);]]></ST>
+    </Implementation>
+    <LineIds Name="P_ReadSesnors">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

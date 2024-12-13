@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TctGeneratedModules>
+   <ModuleInfo CLSID="{1A3FECE7-83E3-BFC2-3B21-B7B065EFA006}" GUID="{1A3FECE7-83E3-BFC2-3B21-B7B065EFA006}" LibraryId="TE140x Module Vendor|damper_twincat|0.0.0.16">
+      <BlockDiagram>
+         <Name>damper_twincat</Name>
+         <Identifier>&lt;Root&gt;</Identifier>
+         <Type>root</Type>
+         <Position h="0" w="0" x="0" y="0"/>
+         <BlockDesign/>
+         <Block>
+            <Name>acc</Name>
+            <Identifier>&lt;Root&gt;/acc</Identifier>
+            <Type>Inport</Type>
+            <Position h="14" w="30" x="1215" y="393"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Port" Value="1"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1250" y="400"/>
+               <Name>acc</Name>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1250" y="400"/>
+                  <Point x="1280" y="400"/>
+               </Line>
+               <Signal Category="Input" Name="acc" ReadOnly="true">
+                  <GlobalName>damper_twincat_U.acc</GlobalName>
+                  <AdsIdxOffs>#x80000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>enable</Name>
+            <Identifier>&lt;Root&gt;/enable</Identifier>
+            <Type>Inport</Type>
+            <Position h="14" w="30" x="1215" y="278"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Port" Value="2"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1250" y="285"/>
+               <Name>enable</Name>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1250" y="285"/>
+                  <Point x="1280" y="285"/>
+               </Line>
+               <Signal Category="Input" Name="enable" ReadOnly="true">
+                  <GlobalName>damper_twincat_U.enable</GlobalName>
+                  <AdsIdxOffs>#x80000008</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Constant</Name>
+            <Identifier>&lt;Root&gt;/Constant</Identifier>
+            <Type>Constant</Type>
+            <Position h="30" w="30" x="1215" y="320"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Value" Value="0"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1250" y="335"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1250" y="335"/>
+                  <Point x="1263" y="335"/>
+                  <Point x="1263" y="300"/>
+                  <Point x="1280" y="300"/>
+               </Line>
+            </Port>
+            <Parameter Category="Parameters" Name="Value">
+               <GlobalName>damper_twincat_P.Constant_Value</GlobalName>
+               <AdsIdxOffs>#x3B</AdsIdxOffs>
+            </Parameter>
+         </Block>
+         <Block>
+            <Name>Data Type Conversion</Name>
+            <Identifier>&lt;Root&gt;/Data Type Conversion</Identifier>
+            <Type>DataTypeConversion</Type>
+            <Position h="24" w="45" x="1490" y="273"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1475" y="285"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Saturation</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1540" y="285"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1540" y="285"/>
+                  <Point x="1560" y="285"/>
+               </Line>
+               <Signal Category="Output" Name="DataTypeConversion" ReadOnly="true">
+                  <GlobalName>damper_twincat_B.DataTypeConversion</GlobalName>
+                  <AdsIdxOffs>#x82000098</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Gain</Name>
+            <Identifier>&lt;Root&gt;/Gain</Identifier>
+            <Type>Gain</Type>
+            <Position h="30" w="30" x="1370" y="270"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Gain" Value="390625/3"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1355" y="285"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Switch</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1405" y="285"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1405" y="285"/>
+                  <Point x="1425" y="285"/>
+               </Line>
+            </Port>
+            <Parameter Category="Parameters" Name="Gain">
+               <GlobalName>damper_twincat_P.Gain_Gain</GlobalName>
+               <AdsIdxOffs>#x43</AdsIdxOffs>
+            </Parameter>
+         </Block>
+         <Block>
+            <Name>Kalman Filter</Name>
+            <Identifier>&lt;S1&gt;</Identifier>
+            <Type>SubSystem</Type>
+            <Position h="62" w="50" x="1285" y="354"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1270" y="370"/>
+               <Name>u</Name>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Unary Minus</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Output" Name="u" ReadOnly="true">
+                  <GlobalName>damper_twincat_B.u</GlobalName>
+                  <AdsIdxOffs>#x82000020</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="2">Inport</Type>
+               <Position x="1270" y="400"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/acc</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Input" Name="acc" ReadOnly="true">
+                  <GlobalName>damper_twincat_U.acc</GlobalName>
+                  <AdsIdxOffs>#x80000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1340" y="385"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1340" y="385"/>
+                  <Point x="1364" y="385"/>
+                  <Point x="1364" y="455"/>
+                  <Point x="1235" y="455"/>
+               </Line>
+            </Port>
+            <State Category="Internal signals" Name="Observer/Add" ReadOnly="true">
+               <GlobalName>damper_twincat_B.Add</GlobalName>
+               <AdsIdxOffs>#x82000028</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="Observer/A[k]*xhat[k|k-1]" ReadOnly="true">
+               <GlobalName>damper_twincat_B.Akxhatkk1</GlobalName>
+               <AdsIdxOffs>#x82000068</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="Observer/B[k]*u[k]" ReadOnly="true">
+               <GlobalName>damper_twincat_B.Bkuk</GlobalName>
+               <AdsIdxOffs>#x82000078</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="Observer/MeasurementUpdate/D[k]*u[k]" ReadOnly="true">
+               <GlobalName>damper_twincat_B.Dkuk</GlobalName>
+               <AdsIdxOffs>#x82000088</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="MemoryX" ReadOnly="true">
+               <GlobalName>damper_twincat_B.MemoryX</GlobalName>
+               <AdsIdxOffs>#x82000010</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="CovarianceOutputConfigurator/decideOutput/SqrtUsedFcn" ReadOnly="true">
+               <GlobalName>damper_twincat_B.P</GlobalName>
+               <AdsIdxOffs>#x82000048</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="Observer/MeasurementUpdate/Product3" ReadOnly="true">
+               <GlobalName>damper_twincat_B.Product3</GlobalName>
+               <AdsIdxOffs>#x82000038</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="Observer/MeasurementUpdate/Sum" ReadOnly="true">
+               <GlobalName>damper_twincat_B.Sum</GlobalName>
+               <AdsIdxOffs>#x82000090</AdsIdxOffs>
+            </State>
+            <State Category="Internal signals" Name="X0" ReadOnly="true">
+               <GlobalName>damper_twincat_B.X0</GlobalName>
+               <AdsIdxOffs>#x82000000</AdsIdxOffs>
+            </State>
+            <State Category="DWork" Name="Observer/MeasurementUpdate" ReadOnly="true">
+               <GlobalName>damper_twincat_DW.MeasurementUpdate_MODE</GlobalName>
+               <AdsIdxOffs>#x84000004</AdsIdxOffs>
+            </State>
+            <State Category="DWork" Name="MemoryX" ReadOnly="true">
+               <GlobalName>damper_twincat_DW.MemoryX_IWORK</GlobalName>
+               <AdsIdxOffs>#x84000000</AdsIdxOffs>
+            </State>
+            <Parameter Category="Parameters" Name="A:Value">
+               <GlobalName>damper_twincat_P.A_Value</GlobalName>
+               <AdsIdxOffs>#x5B</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="B:Value">
+               <GlobalName>damper_twincat_P.B_Value</GlobalName>
+               <AdsIdxOffs>#x7B</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="C:Value">
+               <GlobalName>damper_twincat_P.C_Value</GlobalName>
+               <AdsIdxOffs>#x8B</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="CalculatePL/CovarianceZ:Value">
+               <GlobalName>damper_twincat_P.CovarianceZ_Value</GlobalName>
+               <AdsIdxOffs>#x9B</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="D:Value">
+               <GlobalName>damper_twincat_P.D_Value</GlobalName>
+               <AdsIdxOffs>#xCB</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="Enable:Value">
+               <GlobalName>damper_twincat_P.Enable_Value</GlobalName>
+               <AdsIdxOffs>#xD4</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="CalculatePL/KalmanGainL:Value">
+               <GlobalName>damper_twincat_P.KalmanGainL_Value</GlobalName>
+               <AdsIdxOffs>#xBB</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="Observer/MeasurementUpdate/L*(y[k]-yhat[k|k-1]):InitialOutput">
+               <GlobalName>damper_twincat_P.Lykyhatkk1_Y0</GlobalName>
+               <AdsIdxOffs>#x23</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="X0:Value">
+               <GlobalName>damper_twincat_P.X0_Value</GlobalName>
+               <AdsIdxOffs>#x2B</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="CovarianceOutputConfigurator/decideOutput/isSqrtUsed:Value">
+               <GlobalName>damper_twincat_P.isSqrtUsed_Value</GlobalName>
+               <AdsIdxOffs>#xD3</AdsIdxOffs>
+            </Parameter>
+            <State Category="ContState" Name="MemoryX" ReadOnly="true">
+               <GlobalName>damper_twincat_X.MemoryX_CSTATE</GlobalName>
+               <AdsIdxOffs>#x83000000</AdsIdxOffs>
+            </State>
+         </Block>
+         <Block>
+            <Name>LQR</Name>
+            <Identifier>&lt;Root&gt;/LQR</Identifier>
+            <Type>Gain</Type>
+            <Position h="46" w="80" x="1150" y="432"/>
+            <BlockDesign>
+               <Rotation>180</Rotation>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Gain" Value="K"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1245" y="455"/>
+               <Rotation>3.1416</Rotation>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;S1&gt;</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1145" y="455"/>
+               <Rotation>3.1416</Rotation>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1145" y="455"/>
+                  <Point x="1047" y="455"/>
+                  <Point x="1047" y="300"/>
+                  <Point x="1075" y="300"/>
+               </Line>
+            </Port>
+            <Parameter Category="Parameters" Name="Gain">
+               <GlobalName>damper_twincat_P.K</GlobalName>
+               <AdsIdxOffs>#x13</AdsIdxOffs>
+            </Parameter>
+         </Block>
+         <Block>
+            <Name>Saturation</Name>
+            <Identifier>&lt;Root&gt;/Saturation</Identifier>
+            <Type>Saturate</Type>
+            <Position h="30" w="30" x="1430" y="270"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1415" y="285"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Gain</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1465" y="285"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1465" y="285"/>
+                  <Point x="1485" y="285"/>
+               </Line>
+            </Port>
+            <Parameter Category="Parameters" Name="LowerLimit">
+               <GlobalName>damper_twincat_P.Saturation_LowerSat</GlobalName>
+               <AdsIdxOffs>#x53</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="UpperLimit">
+               <GlobalName>damper_twincat_P.Saturation_UpperSat</GlobalName>
+               <AdsIdxOffs>#x4B</AdsIdxOffs>
+            </Parameter>
+         </Block>
+         <Block>
+            <Name>Switch</Name>
+            <Identifier>&lt;Root&gt;/Switch</Identifier>
+            <Type>Switch</Type>
+            <Position h="40" w="50" x="1285" y="265"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1270" y="270"/>
+               <Name>u</Name>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Unary Minus</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Output" Name="u" ReadOnly="true">
+                  <GlobalName>damper_twincat_B.u</GlobalName>
+                  <AdsIdxOffs>#x82000020</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="2">Inport</Type>
+               <Position x="1270" y="285"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/enable</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Input" Name="enable" ReadOnly="true">
+                  <GlobalName>damper_twincat_U.enable</GlobalName>
+                  <AdsIdxOffs>#x80000008</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="3">Inport</Type>
+               <Position x="1270" y="300"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Constant</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1340" y="285"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1340" y="285"/>
+                  <Point x="1365" y="285"/>
+               </Line>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Unary Minus</Name>
+            <Identifier>&lt;Root&gt;/Unary Minus</Identifier>
+            <Type>UnaryMinus</Type>
+            <Position h="30" w="30" x="1080" y="285"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1065" y="300"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/LQR</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1115" y="300"/>
+               <Name>u</Name>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Name>u</Name>
+                  <Point x="1115" y="300"/>
+                  <Point x="1147" y="300"/>
+                  <Line>
+                     <Name>u</Name>
+                     <Point x="1147" y="300"/>
+                     <Point x="1147" y="370"/>
+                     <Point x="1280" y="370"/>
+                  </Line>
+                  <Line>
+                     <Name>u</Name>
+                     <Point x="1147" y="300"/>
+                     <Point x="1147" y="237"/>
+                     <Point x="1263" y="237"/>
+                     <Point x="1263" y="270"/>
+                     <Point x="1280" y="270"/>
+                  </Line>
+               </Line>
+               <Signal Category="Output" Name="u" ReadOnly="true">
+                  <GlobalName>damper_twincat_B.u</GlobalName>
+                  <AdsIdxOffs>#x82000020</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Zero-Order
+Hold</Name>
+            <Identifier>&lt;Root&gt;/Zero-Order
+Hold</Identifier>
+            <Type>ZeroOrderHold</Type>
+            <Position h="30" w="35" x="1565" y="270"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1550" y="285"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Data Type Conversion</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Output" Name="DataTypeConversion" ReadOnly="true">
+                  <GlobalName>damper_twincat_B.DataTypeConversion</GlobalName>
+                  <AdsIdxOffs>#x82000098</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="1605" y="285"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="1605" y="285"/>
+                  <Point x="1625" y="285"/>
+               </Line>
+               <Signal Category="Output" Name="torque" ReadOnly="true">
+                  <GlobalName>damper_twincat_Y.torque</GlobalName>
+                  <AdsIdxOffs>#x81000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>torque</Name>
+            <Identifier>&lt;Root&gt;/torque</Identifier>
+            <Type>Outport</Type>
+            <Position h="14" w="30" x="1630" y="278"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Port" Value="1"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="1615" y="285"/>
+               <Name>torque</Name>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Zero-Order
+Hold</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Output" Name="torque" ReadOnly="true">
+                  <GlobalName>damper_twincat_Y.torque</GlobalName>
+                  <AdsIdxOffs>#x81000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <SubsystemHierarchy>
+            <Subsystem>
+               <ID>&lt;Root&gt;</ID>
+            </Subsystem>
+            <Subsystem>
+               <ID>&lt;S1&gt;</ID>
+               <Parent>&lt;Root&gt;</Parent>
+            </Subsystem>
+         </SubsystemHierarchy>
+         <DebugInfo>
+            <SourceFile>
+               <Name>damper_twincat.cpp</Name>
+               <Path>C:\Users\I3-Project\Documents\MATLAB\Aidan\AMD1\damper_twincat_tcgrt\damper_twincat.cpp</Path>
+               <CodeSection CommentStartLine="157" EndLine="161" Method="damper_twincat_step" StartLine="158">
+                  <Block>&lt;S1&gt;/X0</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="162" EndLine="167" Method="damper_twincat_step" StartLine="163">
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="168" EndLine="171" Method="damper_twincat_step" StartLine="169">
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="172" EndLine="179" Method="damper_twincat_step" StartLine="176">
+                  <Block>&lt;S53&gt;/Sum</Block>
+                  <Block>&lt;Root&gt;/LQR</Block>
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="180" EndLine="182" Method="damper_twincat_step" StartLine="181">
+                  <Block>&lt;Root&gt;/Unary Minus</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="183" EndLine="184" Method="damper_twincat_step" StartLine="184">
+                  <Block>&lt;Root&gt;/Switch</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="185" EndLine="187" Method="damper_twincat_step" StartLine="186">
+                  <Block>&lt;S53&gt;/Sum</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="188" EndLine="193" Method="damper_twincat_step" StartLine="191">
+                  <Block>&lt;S53&gt;/Sum</Block>
+                  <Block>&lt;Root&gt;/Constant</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="194" EndLine="195" Method="damper_twincat_step" StartLine="195">
+                  <Block>&lt;Root&gt;/Switch</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="196" EndLine="200" Method="damper_twincat_step" StartLine="199">
+                  <Block>&lt;S53&gt;/Sum</Block>
+                  <Block>&lt;Root&gt;/Gain</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="201" EndLine="202" Method="damper_twincat_step" StartLine="202">
+                  <Block>&lt;Root&gt;/Saturation</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="203" EndLine="205" Method="damper_twincat_step" StartLine="204">
+                  <Block>&lt;S53&gt;/Sum</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="206" EndLine="209" Method="damper_twincat_step" StartLine="207">
+                  <Block>&lt;S53&gt;/Sum</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="210" EndLine="211" Method="damper_twincat_step" StartLine="211">
+                  <Block>&lt;Root&gt;/Saturation</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="212" EndLine="219" Method="damper_twincat_step" StartLine="213">
+                  <Block>&lt;Root&gt;/Data Type Conversion</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="220" EndLine="225" Method="damper_twincat_step" StartLine="221">
+                  <Block>&lt;Root&gt;/Data Type Conversion</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="226" EndLine="229" Method="damper_twincat_step" StartLine="229">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+                  <Block>&lt;S53&gt;/Enable</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="230" EndLine="234" Method="damper_twincat_step" StartLine="233">
+                  <Block>&lt;Root&gt;/torque</Block>
+                  <Block>&lt;Root&gt;/Zero-Order Hold</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="235" EndLine="255" Method="damper_twincat_step" StartLine="239">
+                  <Block>&lt;S51&gt;/SqrtUsedFcn</Block>
+                  <Block>&lt;S2&gt;/CovarianceZ</Block>
+                  <Block>&lt;S51&gt;/isSqrtUsed</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="256" EndLine="257" Method="damper_twincat_step" StartLine="257">
+                  <Block>&lt;S51&gt;/SqrtUsedFcn</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="258" EndLine="261" Method="damper_twincat_step" StartLine="259">
+                  <Block>&lt;S1&gt;/Enable</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="262" EndLine="269" Method="damper_twincat_step" StartLine="265">
+                  <Block>&lt;S53&gt;/Product3</Block>
+                  <Block>&lt;S53&gt;/L*(y[k]-yhat[k|k-1])</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="270" EndLine="273" Method="damper_twincat_step" StartLine="271">
+                  <Block>&lt;S1&gt;/Enable</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="274" EndLine="275" Method="damper_twincat_step" StartLine="275">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="276" EndLine="282" Method="damper_twincat_step" StartLine="279">
+                  <Block>&lt;S22&gt;/A[k]*xhat[k|k-1]</Block>
+                  <Block>&lt;S1&gt;/A</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="283" EndLine="287" Method="damper_twincat_step" StartLine="286">
+                  <Block>&lt;S22&gt;/B[k]*u[k]</Block>
+                  <Block>&lt;S1&gt;/B</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="288" EndLine="294" Method="damper_twincat_step" StartLine="291">
+                  <Block>&lt;S22&gt;/A[k]*xhat[k|k-1]</Block>
+                  <Block>&lt;S1&gt;/A</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="295" EndLine="299" Method="damper_twincat_step" StartLine="298">
+                  <Block>&lt;S22&gt;/B[k]*u[k]</Block>
+                  <Block>&lt;S1&gt;/B</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="300" EndLine="303" Method="damper_twincat_step" StartLine="303">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+                  <Block>&lt;S53&gt;/Enable</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="304" EndLine="311" Method="damper_twincat_step" StartLine="308">
+                  <Block>&lt;S53&gt;/Sum</Block>
+                  <Block>&lt;S1&gt;/C</Block>
+                  <Block>&lt;S53&gt;/C[k]*xhat[k|k-1]</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="312" EndLine="316" Method="damper_twincat_step" StartLine="315">
+                  <Block>&lt;S53&gt;/D[k]*u[k]</Block>
+                  <Block>&lt;S1&gt;/D</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="317" EndLine="322" Method="damper_twincat_step" StartLine="320">
+                  <Block>&lt;S53&gt;/Sum</Block>
+                  <Block>&lt;S53&gt;/Add1</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="323" EndLine="331" Method="damper_twincat_step" StartLine="326">
+                  <Block>&lt;S53&gt;/Product3</Block>
+                  <Block>&lt;S2&gt;/KalmanGainL</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="332" EndLine="333" Method="damper_twincat_step" StartLine="333">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="334" EndLine="342" Method="damper_twincat_step" StartLine="338">
+                  <Block>&lt;S22&gt;/Add</Block>
+                  <Block>&lt;S22&gt;/B[k]*u[k]</Block>
+                  <Block>&lt;S53&gt;/Product3</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="343" EndLine="344" Method="damper_twincat_step" StartLine="344">
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="394" EndLine="398" Method="damper_twincat_derivatives" StartLine="395">
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="408" EndLine="411" Method="damper_twincat_initialize" StartLine="409">
+                  <Block>&lt;S1&gt;/X0</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="412" EndLine="414" Method="damper_twincat_initialize" StartLine="413">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="415" EndLine="416" Method="damper_twincat_initialize" StartLine="416">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="417" EndLine="424" Method="damper_twincat_initialize" StartLine="418">
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="425" EndLine="426" Method="damper_twincat_initialize" StartLine="426">
+                  <Block>&lt;S1&gt;/MemoryX</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="427" EndLine="427" Method="damper_twincat_initialize" StartLine="428">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="428" EndLine="433" Method="damper_twincat_initialize" StartLine="431">
+                  <Block>&lt;S53&gt;/Product3</Block>
+                  <Block>&lt;S53&gt;/L*(y[k]-yhat[k|k-1])</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="434" EndLine="435" Method="damper_twincat_initialize" StartLine="435">
+                  <Block>&lt;S22&gt;/MeasurementUpdate</Block>
+               </CodeSection>
+            </SourceFile>
+         </DebugInfo>
+      </BlockDiagram>
+      <DefaultValues>
+         <Value>
+            <Name>TaskOid</Name>
+         </Value>
+         <Value>
+            <Name>TaskPriority</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TaskCycleTimeNs</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TaskPort</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TaskSortOrder</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TraceLevelMax</Name>
+            <EnumText>tlInfo</EnumText>
+         </Value>
+         <Value>
+            <Name>ModuleCaller</Name>
+            <EnumText>CyclicTask</EnumText>
+         </Value>
+         <Value>
+            <Name>CallerVerification</Name>
+            <EnumText>Default</EnumText>
+         </Value>
+         <Value>
+            <Name>StepSizeAdaptation</Name>
+            <EnumText>RequireMatchingTaskCycleTime</EnumText>
+         </Value>
+         <Value>
+            <Name>ExecutionSequence</Name>
+            <EnumText>UpdateBeforeOutputMapping</EnumText>
+         </Value>
+         <Value>
+            <Name>Execute</Name>
+            <EnumText>TRUE</EnumText>
+         </Value>
+         <Value>
+            <Name>AccessLockState</Name>
+            <EnumText>TCOM_STATE_OP</EnumText>
+         </Value>
+         <Value>
+            <Name>InitExceptionHandling</Name>
+            <EnumText>CallerExceptions</EnumText>
+         </Value>
+         <Value>
+            <Name>UpdateExceptionHandling</Name>
+            <EnumText>CallerExceptions</EnumText>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelName</Name>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P_Sharing</Name>
+            <EnumText>Define</EnumText>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.K[0]</Name>
+            <Value>0.3628914383616237</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.K[1]</Name>
+            <Value>1.001197550465911</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.Lykyhatkk1_Y0</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.X0_Value[0]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.X0_Value[1]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.Constant_Value</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.Gain_Gain</Name>
+            <Value>130208.3333333333</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.Saturation_UpperSat</Name>
+            <Value>1000.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.Saturation_LowerSat</Name>
+            <Value>-1000</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.A_Value[0]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.A_Value[1]</Name>
+            <Value>-362.3188405797102</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.A_Value[2]</Name>
+            <Value>1.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.A_Value[3]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.B_Value[0]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.B_Value[1]</Name>
+            <Value>302.8467595396729</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.C_Value[0]</Name>
+            <Value>362.3188405797102</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.C_Value[1]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.CovarianceZ_Value[0]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.CovarianceZ_Value[1]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.CovarianceZ_Value[2]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.CovarianceZ_Value[3]</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.KalmanGainL_Value[0]</Name>
+            <Value>0.2239114039588197</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.KalmanGainL_Value[1]</Name>
+            <Value>0.02469507659596058</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.D_Value</Name>
+            <Value>302.8467595396729</Value>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.isSqrtUsed_Value</Name>
+            <EnumText>FALSE</EnumText>
+         </Value>
+         <Value>
+            <Name>damper_twincat_P.Enable_Value</Name>
+            <EnumText>TRUE</EnumText>
+         </Value>
+      </DefaultValues>
+      <ModuleParameters>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="WRITE">
+            <Name>CallBy</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="WRITE">
+            <Name>ExecutionSequence</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="WRITE">
+            <Name>StepSizeAdaptation</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>Initialized</Name>
+            <Category>Monitoring</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>CycleUpdateExecuted</Name>
+            <Category>Monitoring</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="" StartupValueAccess="">
+            <Name>ModuleInfo</Name>
+            <Category>Module identification</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>ModuleBuildInfo</Name>
+            <Category>Module identification</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="WRITE" StartupValueAccess="WRITE">
+            <Name>Execute</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>SimulinkTime</Name>
+            <Category>Monitoring</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>AccessLockState</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+      </ModuleParameters>
+      <BlockDesigns>
+         <BlockDesign>
+            <Type>Inport</Type>
+            <Border>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-1022.3622)">
+                     <rect height="28.121166" id="rect2996" ry="14.060583" style="fill:none;stroke:#000000;stroke-width:1.87883461;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="58.121166" x="0.9394173" y="1023.3016"/>
+                  </g>
+               </svg>
+            </Border>
+            <Image>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <text id="text3010" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="30" xml:space="preserve" y="15"><tspan id="tspan3012" x="30" y="15">Block::Port</tspan></text></svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Constant</Type>
+            <Image>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1">
+                     <text id="text3001" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="50" xml:space="preserve" y="50"><tspan id="tspan3003" x="50" y="50">ADS::Value Block::Value</tspan></text></g>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Gain</Type>
+            <Border>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-952.36218)">
+                     <path d="M 0,100 0,0 100,50 0,100" id="path3005" style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" transform="translate(0,952.36218)"/>
+                  </g>
+               </svg>
+            </Border>
+            <Image>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1">
+                     <text id="text2991" style="font-size:8px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="5" xml:space="preserve" y="50"><tspan id="tspan2993" x="5" y="50">ADS::Gain Block::Gain</tspan></text></g>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Saturate</Type>
+            <Image>
+               <svg height="100" id="svg2" version="1.1" width="100">
+                  <title id="title3802">Saturate</title>
+                  <defs id="defs4"/>
+                  <metadata id="metadata7"/>
+                  <path d="m 21.343889,77.165351 15.019759,0 L 69.631521,24 84,24" id="path3774" style="fill:none;stroke:#000000;stroke-width:0.55226934px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+                  <path d="m 51.778672,20.078738 0,62.598424" id="path3776" style="fill:none;stroke:#000000;stroke-width:0.55226934px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+                  <path d="m 21.739143,50.393698 61.264826,0" id="path3778" style="fill:none;stroke:#000000;stroke-width:0.55226934px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Switch</Type>
+            <Image>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-952.36218)">
+                     <rect height="6.1243801" id="rect3006" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="6.1871104" x="41.154118" y="966.15198"/>
+                     <path d="m 41.423146,968.61373 c -13.666931,0 -27.333897,-2e-5 -41.0008279,0" id="path3776" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 44.920178,968.55368 35.508632,34.52472 18.651024,0" id="path3778" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 16.764368,993.41146 0,20.65474" id="path3780" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 16.854023,1003.2585 -16.49895482,0" id="path3782" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 0.35506818,1038.8039 41.15773282,0" id="path3784" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <rect height="6.1243801" id="rect3786" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="5.9181056" x="41.423149" y="1035.1414"/>
+                  </g>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Outport</Type>
+            <Border>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-1022.3622)">
+                     <rect height="28.121166" id="rect2996" ry="14.060583" style="fill:none;stroke:#000000;stroke-width:1.87883461;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="58.121166" x="0.9394173" y="1023.3016"/>
+                  </g>
+               </svg>
+            </Border>
+            <Image>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <text id="text3010" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="30" xml:space="preserve" y="15"><tspan id="tspan3012" x="30" y="15">Block::Port</tspan></text></svg>
+            </Image>
+         </BlockDesign>
+      </BlockDesigns>
+   </ModuleInfo>
+</TctGeneratedModules>

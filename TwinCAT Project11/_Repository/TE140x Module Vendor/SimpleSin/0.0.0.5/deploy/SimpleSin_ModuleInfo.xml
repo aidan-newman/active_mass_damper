@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TctGeneratedModules>
+   <ModuleInfo CLSID="{24150C40-E49C-5EBF-1349-17A646AE354D}" GUID="{24150C40-E49C-5EBF-1349-17A646AE354D}" LibraryId="TE140x Module Vendor|SimpleSin|0.0.0.5">
+      <BlockDiagram>
+         <Name>SimpleSin</Name>
+         <Identifier>&lt;Root&gt;</Identifier>
+         <Type>root</Type>
+         <Position h="0" w="0" x="0" y="0"/>
+         <BlockDesign/>
+         <Block>
+            <Name>execute</Name>
+            <Identifier>&lt;Root&gt;/execute</Identifier>
+            <Type>Inport</Type>
+            <Position h="14" w="30" x="305" y="253"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Port" Value="1"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="340" y="260"/>
+               <Name>execute</Name>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="340" y="260"/>
+                  <Point x="380" y="260"/>
+               </Line>
+               <Signal Category="Input" Name="execute" ReadOnly="true">
+                  <GlobalName>SimpleSin_U.execute</GlobalName>
+                  <AdsIdxOffs>#x80000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>center</Name>
+            <Identifier>&lt;Root&gt;/center</Identifier>
+            <Type>Inport</Type>
+            <Position h="14" w="30" x="305" y="328"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Port" Value="2"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="340" y="335"/>
+               <Name>center</Name>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="340" y="335"/>
+                  <Point x="354" y="335"/>
+                  <Line>
+                     <Point x="354" y="335"/>
+                     <Point x="354" y="275"/>
+                     <Point x="380" y="275"/>
+                  </Line>
+                  <Line>
+                     <Point x="354" y="335"/>
+                     <Point x="375" y="335"/>
+                  </Line>
+               </Line>
+               <Signal Category="Input" Name="center" ReadOnly="true">
+                  <GlobalName>SimpleSin_U.center</GlobalName>
+                  <AdsIdxOffs>#x80000002</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>amplitude</Name>
+            <Identifier>&lt;Root&gt;/amplitude</Identifier>
+            <Type>Inport</Type>
+            <Position h="14" w="30" x="305" y="373"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Port" Value="3"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="340" y="380"/>
+               <Name>amplitude</Name>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="340" y="380"/>
+                  <Point x="355" y="380"/>
+               </Line>
+               <Signal Category="Input" Name="amplitude" ReadOnly="true">
+                  <GlobalName>SimpleSin_U.amplitude</GlobalName>
+                  <AdsIdxOffs>#x80000004</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>frequency</Name>
+            <Identifier>&lt;Root&gt;/frequency</Identifier>
+            <Type>Inport</Type>
+            <Position h="14" w="30" x="505" y="373"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Port" Value="4"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="540" y="380"/>
+               <Name>frequency</Name>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="540" y="380"/>
+                  <Point x="550" y="380"/>
+               </Line>
+               <Signal Category="Input" Name="frequency" ReadOnly="true">
+                  <GlobalName>SimpleSin_U.frequency</GlobalName>
+                  <AdsIdxOffs>#x80000008</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Data Type Conversion0</Name>
+            <Identifier>&lt;Root&gt;/Data Type Conversion0</Identifier>
+            <Type>DataTypeConversion</Type>
+            <Position h="20" w="35" x="380" y="325"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="365" y="335"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/center</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Input" Name="center" ReadOnly="true">
+                  <GlobalName>SimpleSin_U.center</GlobalName>
+                  <AdsIdxOffs>#x80000002</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="420" y="335"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="420" y="335"/>
+                  <Point x="430" y="335"/>
+               </Line>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Data Type Conversion1</Name>
+            <Identifier>&lt;Root&gt;/Data Type Conversion1</Identifier>
+            <Type>DataTypeConversion</Type>
+            <Position h="20" w="35" x="360" y="370"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="345" y="380"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/amplitude</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Input" Name="amplitude" ReadOnly="true">
+                  <GlobalName>SimpleSin_U.amplitude</GlobalName>
+                  <AdsIdxOffs>#x80000004</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="400" y="380"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="400" y="380"/>
+                  <Point x="415" y="380"/>
+                  <Point x="410" y="380"/>
+               </Line>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Data Type Conversion2</Name>
+            <Identifier>&lt;Root&gt;/Data Type Conversion2</Identifier>
+            <Type>DataTypeConversion</Type>
+            <Position h="20" w="35" x="555" y="370"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="540" y="380"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/frequency</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Input" Name="frequency" ReadOnly="true">
+                  <GlobalName>SimpleSin_U.frequency</GlobalName>
+                  <AdsIdxOffs>#x80000008</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="595" y="380"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="595" y="380"/>
+                  <Point x="605" y="380"/>
+               </Line>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Data Type Conversion3</Name>
+            <Identifier>&lt;Root&gt;/Data Type Conversion3</Identifier>
+            <Type>DataTypeConversion</Type>
+            <Position h="20" w="35" x="460" y="250"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="445" y="260"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Switch</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Output" Name="Switch" ReadOnly="true">
+                  <GlobalName>SimpleSin_B.Switch</GlobalName>
+                  <AdsIdxOffs>#x82000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="500" y="260"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="500" y="260"/>
+                  <Point x="515" y="260"/>
+               </Line>
+               <Signal Category="Output" Name="position" ReadOnly="true">
+                  <GlobalName>SimpleSin_Y.position</GlobalName>
+                  <AdsIdxOffs>#x81000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>Sine Wave</Name>
+            <Identifier>&lt;Root&gt;/Sine Wave</Identifier>
+            <Type>Sin</Type>
+            <Position h="30" w="30" x="305" y="200"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="340" y="215"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="340" y="215"/>
+                  <Point x="360" y="215"/>
+                  <Point x="360" y="245"/>
+                  <Point x="380" y="245"/>
+               </Line>
+            </Port>
+            <Parameter Category="Parameters" Name="Phase">
+               <GlobalName>SimpleSin_P.SineWave_Phase</GlobalName>
+               <AdsIdxOffs>#x2B</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="Amplitude">
+               <GlobalName>SimpleSin_P.amplitude</GlobalName>
+               <AdsIdxOffs>#x13</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="Bias">
+               <GlobalName>SimpleSin_P.center</GlobalName>
+               <AdsIdxOffs>#x1B</AdsIdxOffs>
+            </Parameter>
+            <Parameter Category="Parameters" Name="Frequency">
+               <GlobalName>SimpleSin_P.frequency</GlobalName>
+               <AdsIdxOffs>#x23</AdsIdxOffs>
+            </Parameter>
+         </Block>
+         <Block>
+            <Name>Switch</Name>
+            <Identifier>&lt;Root&gt;/Switch</Identifier>
+            <Type>Switch</Type>
+            <Position h="40" w="50" x="385" y="240"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="370" y="245"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Sine Wave</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+            <Port>
+               <Type No="2">Inport</Type>
+               <Position x="370" y="260"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/execute</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Input" Name="execute" ReadOnly="true">
+                  <GlobalName>SimpleSin_U.execute</GlobalName>
+                  <AdsIdxOffs>#x80000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="3">Inport</Type>
+               <Position x="370" y="275"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/center</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Input" Name="center" ReadOnly="true">
+                  <GlobalName>SimpleSin_U.center</GlobalName>
+                  <AdsIdxOffs>#x80000002</AdsIdxOffs>
+               </Signal>
+            </Port>
+            <Port>
+               <Type No="1">Outport</Type>
+               <Position x="440" y="260"/>
+               <IsConnected>1</IsConnected>
+               <Line>
+                  <Point x="440" y="260"/>
+                  <Point x="455" y="260"/>
+               </Line>
+               <Signal Category="Output" Name="Switch" ReadOnly="true">
+                  <GlobalName>SimpleSin_B.Switch</GlobalName>
+                  <AdsIdxOffs>#x82000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <Block>
+            <Name>To Workspace0</Name>
+            <Identifier>&lt;Root&gt;/To Workspace0</Identifier>
+            <Type>ToWorkspace</Type>
+            <Position h="20" w="70" x="435" y="325"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="420" y="335"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Data Type Conversion0</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+         </Block>
+         <Block>
+            <Name>To Workspace1</Name>
+            <Identifier>&lt;Root&gt;/To Workspace1</Identifier>
+            <Type>ToWorkspace</Type>
+            <Position h="20" w="70" x="415" y="370"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="400" y="380"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Data Type Conversion1</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+         </Block>
+         <Block>
+            <Name>To Workspace2</Name>
+            <Identifier>&lt;Root&gt;/To Workspace2</Identifier>
+            <Type>ToWorkspace</Type>
+            <Position h="20" w="70" x="610" y="370"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="595" y="380"/>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Data Type Conversion2</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+            </Port>
+         </Block>
+         <Block>
+            <Name>position</Name>
+            <Identifier>&lt;Root&gt;/position</Identifier>
+            <Type>Outport</Type>
+            <Position h="14" w="30" x="520" y="253"/>
+            <BlockDesign>
+               <Border>
+                  <svg height="1" width="1"/>
+               </Border>
+               <Image>
+                  <Placeholder Name="Port" Value="1"/>
+               </Image>
+            </BlockDesign>
+            <Port>
+               <Type No="1">Inport</Type>
+               <Position x="505" y="260"/>
+               <Name>position</Name>
+               <IsConnected>1</IsConnected>
+               <Source>
+                  <BlockIdentifier>&lt;Root&gt;/Data Type Conversion3</BlockIdentifier>
+                  <PortType>Outport</PortType>
+                  <PortNo>1</PortNo>
+               </Source>
+               <Signal Category="Output" Name="position" ReadOnly="true">
+                  <GlobalName>SimpleSin_Y.position</GlobalName>
+                  <AdsIdxOffs>#x81000000</AdsIdxOffs>
+               </Signal>
+            </Port>
+         </Block>
+         <SubsystemHierarchy>
+            <Subsystem>
+               <ID>&lt;Root&gt;</ID>
+            </Subsystem>
+         </SubsystemHierarchy>
+         <DebugInfo>
+            <SourceFile>
+               <Name>SimpleSin.cpp</Name>
+               <Path>C:\Users\I3-Project\Documents\MATLAB\Aidan\SimpleSin_tcgrt\SimpleSin.cpp</Path>
+               <CodeSection CommentStartLine="38" EndLine="43" Method="SimpleSin_step" StartLine="41">
+                  <Block>&lt;Root&gt;/Switch</Block>
+                  <Block>&lt;Root&gt;/Sine Wave</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="44" EndLine="45" Method="SimpleSin_step" StartLine="45">
+                  <Block>&lt;Root&gt;/Switch</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="46" EndLine="49" Method="SimpleSin_step" StartLine="47">
+                  <Block>&lt;Root&gt;/Switch</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="50" EndLine="51" Method="SimpleSin_step" StartLine="51">
+                  <Block>&lt;Root&gt;/Switch</Block>
+               </CodeSection>
+               <CodeSection CommentStartLine="52" EndLine="54" Method="SimpleSin_step" StartLine="53">
+                  <Block>&lt;Root&gt;/position</Block>
+               </CodeSection>
+            </SourceFile>
+         </DebugInfo>
+      </BlockDiagram>
+      <DefaultValues>
+         <Value>
+            <Name>TaskOid</Name>
+         </Value>
+         <Value>
+            <Name>TaskPriority</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TaskCycleTimeNs</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TaskPort</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TaskSortOrder</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>TraceLevelMax</Name>
+            <EnumText>tlInfo</EnumText>
+         </Value>
+         <Value>
+            <Name>ModuleCaller</Name>
+            <EnumText>CyclicTask</EnumText>
+         </Value>
+         <Value>
+            <Name>CallerVerification</Name>
+            <EnumText>Default</EnumText>
+         </Value>
+         <Value>
+            <Name>StepSizeAdaptation</Name>
+            <EnumText>RequireMatchingTaskCycleTime</EnumText>
+         </Value>
+         <Value>
+            <Name>ExecutionSequence</Name>
+            <EnumText>UpdateBeforeOutputMapping</EnumText>
+         </Value>
+         <Value>
+            <Name>Execute</Name>
+            <EnumText>TRUE</EnumText>
+         </Value>
+         <Value>
+            <Name>AccessLockState</Name>
+            <EnumText>TCOM_STATE_OP</EnumText>
+         </Value>
+         <Value>
+            <Name>InitExceptionHandling</Name>
+            <EnumText>CallerExceptions</EnumText>
+         </Value>
+         <Value>
+            <Name>UpdateExceptionHandling</Name>
+            <EnumText>CallerExceptions</EnumText>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.MatlabVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>ModuleGeneratorInfo.TE140xVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelName</Name>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.SimulinkVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelVersion[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[0]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[1]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[2]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimulinkModelInfo.ModelChecksum[3]</Name>
+            <Value>0</Value>
+         </Value>
+         <Value>
+            <Name>SimpleSin_P_Sharing</Name>
+            <EnumText>Define</EnumText>
+         </Value>
+         <Value>
+            <Name>SimpleSin_P.amplitude</Name>
+            <Value>180.0</Value>
+         </Value>
+         <Value>
+            <Name>SimpleSin_P.center</Name>
+            <Value>0.0</Value>
+         </Value>
+         <Value>
+            <Name>SimpleSin_P.frequency</Name>
+            <Value>2.0</Value>
+         </Value>
+         <Value>
+            <Name>SimpleSin_P.SineWave_Phase</Name>
+            <Value>0.0</Value>
+         </Value>
+      </DefaultValues>
+      <ModuleParameters>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="WRITE">
+            <Name>CallBy</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="WRITE">
+            <Name>ExecutionSequence</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="WRITE">
+            <Name>StepSizeAdaptation</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>Initialized</Name>
+            <Category>Monitoring</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>CycleUpdateExecuted</Name>
+            <Category>Monitoring</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="" StartupValueAccess="">
+            <Name>ModuleInfo</Name>
+            <Category>Module identification</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>ModuleBuildInfo</Name>
+            <Category>Module identification</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="WRITE" StartupValueAccess="WRITE">
+            <Name>Execute</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>SimulinkTime</Name>
+            <Category>Monitoring</Category>
+         </Parameter>
+         <Parameter DefaultValueAccess="READONLY" OnlineValueAccess="READONLY" StartupValueAccess="">
+            <Name>AccessLockState</Name>
+            <Category>Module parameters</Category>
+         </Parameter>
+      </ModuleParameters>
+      <BlockDesigns>
+         <BlockDesign>
+            <Type>Inport</Type>
+            <Border>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-1022.3622)">
+                     <rect height="28.121166" id="rect2996" ry="14.060583" style="fill:none;stroke:#000000;stroke-width:1.87883461;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="58.121166" x="0.9394173" y="1023.3016"/>
+                  </g>
+               </svg>
+            </Border>
+            <Image>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <text id="text3010" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="30" xml:space="preserve" y="15"><tspan id="tspan3012" x="30" y="15">Block::Port</tspan></text></svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Sin</Type>
+            <Image>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-952.36218)">
+                     <path d="m 6.57,7.57 0,85.86" id="path2991" style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" transform="translate(0,952.36218)"/>
+                     <path d="M 6.31,49.24 92.93,48.73" id="path2993" style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" transform="translate(0,952.36218)"/>
+                     <path d="M 7.07,48.49 C 21.69356,-16.778137 35.198465,7.4461104 48.49,48.74 66.895,119.26199 79.940572,95.45806 91.67,48.49" id="path2995" style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" transform="translate(0,952.36218)"/>
+                  </g>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Switch</Type>
+            <Image>
+               <svg height="100" id="svg3009" version="1.1" width="100">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-952.36218)">
+                     <rect height="6.1243801" id="rect3006" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="6.1871104" x="41.154118" y="966.15198"/>
+                     <path d="m 41.423146,968.61373 c -13.666931,0 -27.333897,-2e-5 -41.0008279,0" id="path3776" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 44.920178,968.55368 35.508632,34.52472 18.651024,0" id="path3778" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 16.764368,993.41146 0,20.65474" id="path3780" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 16.854023,1003.2585 -16.49895482,0" id="path3782" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <path d="m 0.35506818,1038.8039 41.15773282,0" id="path3784" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
+                     <rect height="6.1243801" id="rect3786" style="fill:none;stroke:#000000;stroke-width:0.58110338;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="5.9181056" x="41.423149" y="1035.1414"/>
+                  </g>
+               </svg>
+            </Image>
+         </BlockDesign>
+         <BlockDesign>
+            <Type>Outport</Type>
+            <Border>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <g id="layer1" transform="translate(0,-1022.3622)">
+                     <rect height="28.121166" id="rect2996" ry="14.060583" style="fill:none;stroke:#000000;stroke-width:1.87883461;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none" width="58.121166" x="0.9394173" y="1023.3016"/>
+                  </g>
+               </svg>
+            </Border>
+            <Image>
+               <svg height="30" id="svg3009" version="1.1" width="60">
+                  <defs id="defs3011"/>
+                  <metadata id="metadata3014"/>
+                  <text id="text3010" style="font-size:8px;font-style:normal;font-weight:normal;text-align:center;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans" x="30" xml:space="preserve" y="15"><tspan id="tspan3012" x="30" y="15">Block::Port</tspan></text></svg>
+            </Image>
+         </BlockDesign>
+      </BlockDesigns>
+   </ModuleInfo>
+</TctGeneratedModules>

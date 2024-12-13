@@ -1,0 +1,1111 @@
+<?xml version="1.0"?>
+<TcModuleLibrary xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2009/05/TcModuleLibrary">
+  <Vendor>
+    <Name>TE140x Module Vendor</Name>
+    <ImageData>
+    </ImageData>
+  </Vendor>
+  <DataTypes>
+    <DataType>
+      <Name GUID="{339EAAF5-530E-C0EE-79B2-E17B0DE4685F}" IecLibraryType="true" CName="TcMgSdk::FpExcptCtrlSet">E_FpExcptCtrlSetEx</Name>
+      <Comment><![CDATA[Generated from type 'TcMgSdk.FpExcptCtrlSetEx']]></Comment>
+      <BitSize>8</BitSize>
+      <BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+      <EnumInfo>
+        <Text><![CDATA[CallerExceptions]]></Text>
+        <Enum>1</Enum>
+        <Comment><![CDATA[Use the floating point exception settings provided by the caller]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[ThrowExceptions]]></Text>
+        <Enum>3</Enum>
+        <Comment><![CDATA[Enable floating point exceptions on invalid operations and divisions by zero]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[SuppressExceptions]]></Text>
+        <Enum>13</Enum>
+        <Comment><![CDATA[Disable floating point exceptions.]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[LogExceptions]]></Text>
+        <Enum>19</Enum>
+        <Comment><![CDATA[Log exception information.]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[LogAndHold]]></Text>
+        <Enum>51</Enum>
+        <Comment><![CDATA[Log exception information and puase execution of the cyclic code after completion of the actual cycle]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[LogAndCatch]]></Text>
+        <Enum>83</Enum>
+        <Comment><![CDATA[Log exception information and immediately terminate execution of the cyclic code. Reinitialization is required to restart.]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[LogAndDump]]></Text>
+        <Enum>147</Enum>
+        <Comment><![CDATA[Log exception information, create a dump file with detailed exception information and try to continue execution of the cyclic code]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[LogHoldAndDump]]></Text>
+        <Enum>179</Enum>
+        <Comment><![CDATA[Log exception information, create a dump file with detailed exception information and puase execution of the cyclic code after completion of the actual cycle]]></Comment>
+      </EnumInfo>
+      <EnumInfo>
+        <Text><![CDATA[LogCatchAndDump]]></Text>
+        <Enum>211</Enum>
+        <Comment><![CDATA[Log exception information, create a dump file with detailed exception information and immediately terminate execution of the cyclic code. Reinitialization is required to restart.]]></Comment>
+      </EnumInfo>
+    </DataType>
+    <DataType>
+      <Name GUID="{C998FDCA-E0AF-E9EA-7D74-528FA670D762}" IecLibraryType="true" CName="TcMgSdk::ExceptionInfo">ST_ExceptionInfo</Name>
+      <Comment><![CDATA[Generated from type 'TcMgSdk.ExceptionInfo']]></Comment>
+      <BitSize>1376</BitSize>
+      <SubItem>
+        <Name>nExceptionCode</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+        <Comment><![CDATA[Generated from item 'ExceptionCode']]></Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>0</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>sTmxName</Name>
+        <Type GUID="{18071995-0000-0000-0000-00010000007F}">STRING(127)</Type>
+        <Comment><![CDATA[Generated from item 'TmxName']]></Comment>
+        <BitSize>1024</BitSize>
+        <BitOffs>32</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>nTmxVersion</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>4</Elements>
+        </ArrayInfo>
+        <Comment><![CDATA[Generated from item 'TmxVersion']]></Comment>
+        <BitSize>128</BitSize>
+        <BitOffs>1056</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>nInstructionAddr</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+        <Comment><![CDATA[Generated from item 'InstructionAddr']]></Comment>
+        <BitSize>32</BitSize>
+        <BitOffs>1184</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>nReturnAddr</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>4</Elements>
+        </ArrayInfo>
+        <Comment><![CDATA[Generated from item 'ReturnAddr']]></Comment>
+        <BitSize>128</BitSize>
+        <BitOffs>1216</BitOffs>
+      </SubItem>
+      <SubItem>
+        <Name>bDumpCreated</Name>
+        <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+        <Comment><![CDATA[Generated from item 'DumpCreated']]></Comment>
+        <BitSize>8</BitSize>
+        <BitOffs>1344</BitOffs>
+      </SubItem>
+    </DataType>
+    <DataType>
+      <Name GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}" IecLibraryType="true" CName="matrix_2_real_T">T_matrix_2_real_T</Name>
+      <Comment><![CDATA[Generated from type 'matrix_2_real_T']]></Comment>
+      <BitSize>128</BitSize>
+      <BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+      <ArrayInfo>
+        <LBound>0</LBound>
+        <Elements>2</Elements>
+      </ArrayInfo>
+      <Properties>
+        <Property>
+          <Name>ModuleGenerator_DutShadow</Name>
+          <Value>{448AF116-7E33-F05A-EAB9-DC3661D64403}</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name GUID="{FD2C5221-1100-B06B-29A9-AF302BEBE3E5}" IecLibraryType="true" CName="matrix_4_real_T">T_matrix_4_real_T</Name>
+      <Comment><![CDATA[Generated from type 'matrix_4_real_T']]></Comment>
+      <BitSize>256</BitSize>
+      <BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+      <ArrayInfo>
+        <LBound>0</LBound>
+        <Elements>4</Elements>
+      </ArrayInfo>
+      <Properties>
+        <Property>
+          <Name>ModuleGenerator_DutShadow</Name>
+          <Value>{3C223E90-82DD-E25C-5FC3-58C4D6D8B8B9}</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name GUID="{F766EF92-81FD-2575-3B73-99B4E36F4214}" IecLibraryType="true" CName="int_T">T_int_T</Name>
+      <Comment><![CDATA[Generated from type 'int_T']]></Comment>
+      <BitSize>32</BitSize>
+      <BaseType GUID="{18071995-0000-0000-0000-000000000009}">DINT</BaseType>
+      <Properties>
+        <Property>
+          <Name>ModuleGenerator_DutShadow</Name>
+          <Value>{7CC55797-31DD-5AB7-296E-2DB7BE6FD367}</Value>
+        </Property>
+      </Properties>
+    </DataType>
+    <DataType>
+      <Name GUID="{D153283B-8779-768E-39E9-0F1B16F92D62}" IecLibraryType="true" CName="matrix_2_boolean_T">T_matrix_2_boolean_T</Name>
+      <Comment><![CDATA[Generated from type 'matrix_2_boolean_T']]></Comment>
+      <BitSize>16</BitSize>
+      <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+      <ArrayInfo>
+        <LBound>0</LBound>
+        <Elements>2</Elements>
+      </ArrayInfo>
+      <Properties>
+        <Property>
+          <Name>ModuleGenerator_DutShadow</Name>
+          <Value>{15C87B13-3286-ABC9-A49D-07BC7C981298}</Value>
+        </Property>
+      </Properties>
+    </DataType>
+  </DataTypes>
+  <Licenses />
+  <Library>
+    <Name>damper_twincat</Name>
+    <Version>0.0.0.16</Version>
+    <Group GUID="{5E25B681-A0D1-32F4-3E69-0CFC9DC6C42C}">TE140x Module Vendor</Group>
+    <POUs>
+      <POU Folder="POUs">
+        <Name GUID="{6D6CA0EC-C794-2CF9-C685-27C7AC109B2D}" IecLibraryType="true">FB_damper_twincat</Name>
+        <BitSize X64="4032">3904</BitSize>
+        <SubItem>
+          <Name>m_pData</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_hide</Name>
+            </Property>
+            <Property>
+              <Name>plcAttribute_no_copy</Name>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>eTraceLevelMax</Name>
+          <Type GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</Type>
+          <BitSize>32</BitSize>
+          <BitOffs X64="128">64</BitOffs>
+          <Default>
+            <EnumText>TcTraceLevel.tlInfo</EnumText>
+          </Default>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_TcInitSymbol</Name>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>sInstancePath</Name>
+          <Type GUID="{18071995-0000-0000-0000-0001000000FF}">STRING(255)</Type>
+          <BitSize>2048</BitSize>
+          <BitOffs X64="192">128</BitOffs>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_hide</Name>
+            </Property>
+            <Property>
+              <Name>plcAttribute_instance-path</Name>
+            </Property>
+            <Property>
+              <Name>plcAttribute_noinit</Name>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>m_HResultLog</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+          <BitOffs X64="2240">2176</BitOffs>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_hide</Name>
+            </Property>
+            <Property>
+              <Name>plcAttribute_noinit</Name>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>m_HResult</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+          <BitOffs X64="2272">2208</BitOffs>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_hide</Name>
+            </Property>
+            <Property>
+              <Name>plcAttribute_noinit</Name>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>m_ExtModeData</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000B}">ULINT</Type>
+          <BitSize>64</BitSize>
+          <BitOffs X64="3776">3712</BitOffs>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_hide</Name>
+            </Property>
+            <Property>
+              <Name>plcAttribute_no_copy</Name>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>facc</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+          <Comment><![CDATA[Generated from item 'acc']]></Comment>
+          <BitSize>64</BitSize>
+          <BitOffs X64="3840">3776</BitOffs>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Input</Value>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>benable</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <Comment><![CDATA[Generated from item 'enable']]></Comment>
+          <BitSize>8</BitSize>
+          <BitOffs X64="3904">3840</BitOffs>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Input</Value>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>ntorque</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+          <Comment><![CDATA[Generated from item 'torque']]></Comment>
+          <BitSize>16</BitSize>
+          <BitOffs X64="3920">3856</BitOffs>
+          <Properties>
+            <Property>
+              <Name>ItemType</Name>
+              <Value>Output</Value>
+            </Property>
+          </Properties>
+        </SubItem>
+        <SubItem>
+          <Name>pPdamper_twincat_M</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <Comment><![CDATA[Generated from item 'Pdamper_twincat_M']]></Comment>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs X64="3968">3872</BitOffs>
+        </SubItem>
+        <PropertyItem>
+          <Name NoSetter="true">nHResult</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>call</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <PropertyItem>
+          <Name>eInitExceptionHandling</Name>
+          <Type GUID="{339EAAF5-530E-C0EE-79B2-E17B0DE4685F}">E_FpExcptCtrlSetEx</Type>
+          <BitSize>8</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>call</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <PropertyItem>
+          <Name>eUpdateExceptionHandling</Name>
+          <Type GUID="{339EAAF5-530E-C0EE-79B2-E17B0DE4685F}">E_FpExcptCtrlSetEx</Type>
+          <BitSize>8</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>call</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <PropertyItem>
+          <Name NoSetter="true">nExceptionCnt</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000B}">ULINT</Type>
+          <BitSize>64</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>call</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <PropertyItem>
+          <Name NoSetter="true">stActiveException</Name>
+          <Type GUID="{C998FDCA-E0AF-E9EA-7D74-528FA670D762}">ST_ExceptionInfo</Type>
+          <BitSize>1376</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>variable</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <PropertyItem>
+          <Name NoSetter="true">bInitialized</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>call</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <PropertyItem>
+          <Name>bExecute</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <Properties>
+            <Property>
+              <Name>plcAttribute_monitoring</Name>
+              <Value>call</Value>
+            </Property>
+          </Properties>
+        </PropertyItem>
+        <Method>
+          <Name>FB_exit</Name>
+          <ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
+          <ReturnBitSize>8</ReturnBitSize>
+          <Parameter>
+            <Name>bInCopyCode</Name>
+            <Type GUID="{18071995-0000-0000-0000-000000000030}" Direction="in">BOOL</Type>
+            <BitSize>8</BitSize>
+          </Parameter>
+        </Method>
+        <Method>
+          <Name>FB_init</Name>
+          <ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
+          <ReturnBitSize>8</ReturnBitSize>
+          <Parameter>
+            <Name>bInitRetains</Name>
+            <Type GUID="{18071995-0000-0000-0000-000000000030}" Direction="in">BOOL</Type>
+            <BitSize>8</BitSize>
+          </Parameter>
+          <Parameter>
+            <Name>bInCopyCode</Name>
+            <Type GUID="{18071995-0000-0000-0000-000000000030}" Direction="in">BOOL</Type>
+            <BitSize>8</BitSize>
+          </Parameter>
+        </Method>
+        <Properties>
+          <Property>
+            <Name>PouType</Name>
+            <Value>FunctionBlock</Value>
+          </Property>
+          <Property>
+            <Name>plcAttribute_reflection</Name>
+          </Property>
+          <Property>
+            <Name>TcExternalPou</Name>
+          </Property>
+        </Properties>
+        <Licenses>
+          <License>
+            <LicenseId>{AD7F40C3-F160-4413-83E3-6B7656A795A2}</LicenseId>
+            <Comment><![CDATA[MatSIM License]]></Comment>
+          </License>
+        </Licenses>
+      </POU>
+    </POUs>
+    <DUTs>
+      <DUT Folder="DUTs">
+        <Name GUID="{900A047D-2D71-0374-3A87-FE3193700375}" IecLibraryType="true">ST_FB_damper_twincat_FB_Main</Name>
+        <BitSize X64="128">64</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>result</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="DUTs">
+        <Name GUID="{08F2D10A-44F8-B1B5-818F-9DCDB5EC044B}" IecLibraryType="true">ST_FB_damper_twincat_FB_exit</Name>
+        <BitSize X64="128">64</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bInCopyCode</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>result</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs X64="72">40</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="DUTs">
+        <Name GUID="{2D81EAD5-B6AA-7A66-F5CC-03862FC005F3}" IecLibraryType="true">ST_FB_damper_twincat_FB_init</Name>
+        <BitSize X64="128">64</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bInitRetains</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bInCopyCode</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs X64="72">40</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>result</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs X64="80">48</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="DUTs">
+        <Name GUID="{A918DBD2-68B1-96AB-5085-001E1E537F56}" IecLibraryType="true">ST_GetSet_HRESULT</Name>
+        <BitSize X64="128">64</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>nParam</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</Type>
+          <BitSize>32</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="DUTs">
+        <Name GUID="{339EAAF5-530E-C0EE-79B2-E17B0DE4685F}" IecLibraryType="true" CName="TcMgSdk::FpExcptCtrlSet">E_FpExcptCtrlSetEx</Name>
+        <Comment><![CDATA[Generated from type 'TcMgSdk.FpExcptCtrlSetEx']]></Comment>
+        <BitSize>8</BitSize>
+        <BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+        <EnumInfo>
+          <Text><![CDATA[CallerExceptions]]></Text>
+          <Enum>1</Enum>
+          <Comment><![CDATA[Use the floating point exception settings provided by the caller]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[ThrowExceptions]]></Text>
+          <Enum>3</Enum>
+          <Comment><![CDATA[Enable floating point exceptions on invalid operations and divisions by zero]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[SuppressExceptions]]></Text>
+          <Enum>13</Enum>
+          <Comment><![CDATA[Disable floating point exceptions.]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[LogExceptions]]></Text>
+          <Enum>19</Enum>
+          <Comment><![CDATA[Log exception information.]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[LogAndHold]]></Text>
+          <Enum>51</Enum>
+          <Comment><![CDATA[Log exception information and puase execution of the cyclic code after completion of the actual cycle]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[LogAndCatch]]></Text>
+          <Enum>83</Enum>
+          <Comment><![CDATA[Log exception information and immediately terminate execution of the cyclic code. Reinitialization is required to restart.]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[LogAndDump]]></Text>
+          <Enum>147</Enum>
+          <Comment><![CDATA[Log exception information, create a dump file with detailed exception information and try to continue execution of the cyclic code]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[LogHoldAndDump]]></Text>
+          <Enum>179</Enum>
+          <Comment><![CDATA[Log exception information, create a dump file with detailed exception information and puase execution of the cyclic code after completion of the actual cycle]]></Comment>
+        </EnumInfo>
+        <EnumInfo>
+          <Text><![CDATA[LogCatchAndDump]]></Text>
+          <Enum>211</Enum>
+          <Comment><![CDATA[Log exception information, create a dump file with detailed exception information and immediately terminate execution of the cyclic code. Reinitialization is required to restart.]]></Comment>
+        </EnumInfo>
+      </DUT>
+      <DUT Folder="DUTs">
+        <Name GUID="{5F7BDFDC-E1B9-123D-8C10-6D0E9AB2C24F}" IecLibraryType="true">ST_GetSet_E_FpExcptCtrlSetEx</Name>
+        <BitSize X64="128">64</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>eParam</Name>
+          <Type GUID="{339EAAF5-530E-C0EE-79B2-E17B0DE4685F}">E_FpExcptCtrlSetEx</Type>
+          <BitSize>8</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="DUTs">
+        <Name GUID="{2EC54308-2713-3F94-E215-86E37835329A}" IecLibraryType="true">ST_GetSet_ULINT</Name>
+        <BitSize>128</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>nParam</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000B}">ULINT</Type>
+          <BitSize>64</BitSize>
+          <BitOffs>64</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="DUTs">
+        <Name GUID="{18071995-0000-0000-0000-00010000007F}" IecLibraryType="true" StringType="true">STRING(127)</Name>
+        <BitSize>1024</BitSize>
+        <BaseType GUID="{FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF}" />
+        <Format>
+          <Printf>%s</Printf>
+        </Format>
+      </DUT>
+      <DUT Folder="DUTs">
+        <Name GUID="{C998FDCA-E0AF-E9EA-7D74-528FA670D762}" IecLibraryType="true" CName="TcMgSdk::ExceptionInfo">ST_ExceptionInfo</Name>
+        <Comment><![CDATA[Generated from type 'TcMgSdk.ExceptionInfo']]></Comment>
+        <BitSize>1376</BitSize>
+        <SubItem>
+          <Name>nExceptionCode</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+          <Comment><![CDATA[Generated from item 'ExceptionCode']]></Comment>
+          <BitSize>32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>sTmxName</Name>
+          <Type GUID="{18071995-0000-0000-0000-00010000007F}">STRING(127)</Type>
+          <Comment><![CDATA[Generated from item 'TmxName']]></Comment>
+          <BitSize>1024</BitSize>
+          <BitOffs>32</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>nTmxVersion</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+          <ArrayInfo>
+            <LBound>0</LBound>
+            <Elements>4</Elements>
+          </ArrayInfo>
+          <Comment><![CDATA[Generated from item 'TmxVersion']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>1056</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>nInstructionAddr</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+          <Comment><![CDATA[Generated from item 'InstructionAddr']]></Comment>
+          <BitSize>32</BitSize>
+          <BitOffs>1184</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>nReturnAddr</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+          <ArrayInfo>
+            <LBound>0</LBound>
+            <Elements>4</Elements>
+          </ArrayInfo>
+          <Comment><![CDATA[Generated from item 'ReturnAddr']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>1216</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bDumpCreated</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <Comment><![CDATA[Generated from item 'DumpCreated']]></Comment>
+          <BitSize>8</BitSize>
+          <BitOffs>1344</BitOffs>
+        </SubItem>
+      </DUT>
+      <DUT Folder="DUTs">
+        <Name GUID="{77EBBD72-7A15-F03E-8800-BE22FCBBBC3E}" IecLibraryType="true">ST_GetSet_ST_ExceptionInfo</Name>
+        <BitSize X64="1472">1408</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>stParam</Name>
+          <Type GUID="{C998FDCA-E0AF-E9EA-7D74-528FA670D762}">ST_ExceptionInfo</Type>
+          <BitSize>1376</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="DUTs">
+        <Name GUID="{FABBB492-0FDC-5010-369A-CF3F2D4FEBB9}" IecLibraryType="true">ST_GetSet_BOOL</Name>
+        <BitSize X64="128">64</BitSize>
+        <SubItem>
+          <Name>pInst</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+          <BitSize X64="64">32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bParam</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <BitSize>8</BitSize>
+          <BitOffs X64="64">32</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>plcAttribute_hide</Name>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}" IecLibraryType="true" CName="matrix_2_real_T">T_matrix_2_real_T</Name>
+        <Comment><![CDATA[Generated from type 'matrix_2_real_T']]></Comment>
+        <BitSize>128</BitSize>
+        <BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>2</Elements>
+        </ArrayInfo>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{448AF116-7E33-F05A-EAB9-DC3661D64403}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{FD2C5221-1100-B06B-29A9-AF302BEBE3E5}" IecLibraryType="true" CName="matrix_4_real_T">T_matrix_4_real_T</Name>
+        <Comment><![CDATA[Generated from type 'matrix_4_real_T']]></Comment>
+        <BitSize>256</BitSize>
+        <BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>4</Elements>
+        </ArrayInfo>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{3C223E90-82DD-E25C-5FC3-58C4D6D8B8B9}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{F8F3446D-BE00-7861-58F6-878AC8CCF0A4}" IecLibraryType="true" CName="B_damper_twincat_T">ST_B_damper_twincat_T</Name>
+        <Comment><![CDATA[Generated from type 'B_damper_twincat_T']]></Comment>
+        <BitSize>1280</BitSize>
+        <SubItem>
+          <Name>aX0</Name>
+          <Type GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}">T_matrix_2_real_T</Type>
+          <Comment><![CDATA[Generated from item 'X0']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>aMemoryX</Name>
+          <Type GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}">T_matrix_2_real_T</Type>
+          <Comment><![CDATA[Generated from item 'MemoryX']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>128</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>fu</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+          <Comment><![CDATA[Generated from item 'u']]></Comment>
+          <BitSize>64</BitSize>
+          <BitOffs>256</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>aAdd</Name>
+          <Type GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}">T_matrix_2_real_T</Type>
+          <Comment><![CDATA[Generated from item 'Add']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>320</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>aProduct3</Name>
+          <Type GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}">T_matrix_2_real_T</Type>
+          <Comment><![CDATA[Generated from item 'Product3']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>448</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>aP</Name>
+          <Type GUID="{FD2C5221-1100-B06B-29A9-AF302BEBE3E5}">T_matrix_4_real_T</Type>
+          <Comment><![CDATA[Generated from item 'P']]></Comment>
+          <BitSize>256</BitSize>
+          <BitOffs>576</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>aAkxhatkk1</Name>
+          <Type GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}">T_matrix_2_real_T</Type>
+          <Comment><![CDATA[Generated from item 'Akxhatkk1']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>832</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>aBkuk</Name>
+          <Type GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}">T_matrix_2_real_T</Type>
+          <Comment><![CDATA[Generated from item 'Bkuk']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>960</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>fDkuk</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+          <Comment><![CDATA[Generated from item 'Dkuk']]></Comment>
+          <BitSize>64</BitSize>
+          <BitOffs>1088</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>fSum</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+          <Comment><![CDATA[Generated from item 'Sum']]></Comment>
+          <BitSize>64</BitSize>
+          <BitOffs>1152</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>nDataTypeConversion</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+          <Comment><![CDATA[Generated from item 'DataTypeConversion']]></Comment>
+          <BitSize>16</BitSize>
+          <BitOffs>1216</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{A70070FF-7788-3E93-1FF1-EC60FC01A123}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{F766EF92-81FD-2575-3B73-99B4E36F4214}" IecLibraryType="true" CName="int_T">T_int_T</Name>
+        <Comment><![CDATA[Generated from type 'int_T']]></Comment>
+        <BitSize>32</BitSize>
+        <BaseType GUID="{18071995-0000-0000-0000-000000000009}">DINT</BaseType>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{7CC55797-31DD-5AB7-296E-2DB7BE6FD367}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{19D7A417-E269-F3C4-7618-1ED1DB99612F}" IecLibraryType="true" CName="DW_damper_twincat_T">ST_DW_damper_twincat_T</Name>
+        <Comment><![CDATA[Generated from type 'DW_damper_twincat_T']]></Comment>
+        <BitSize>64</BitSize>
+        <SubItem>
+          <Name>nMemoryX_IWORK</Name>
+          <Type GUID="{F766EF92-81FD-2575-3B73-99B4E36F4214}">T_int_T</Type>
+          <Comment><![CDATA[Generated from item 'MemoryX_IWORK']]></Comment>
+          <BitSize>32</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bMeasurementUpdate_MODE</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <Comment><![CDATA[Generated from item 'MeasurementUpdate_MODE']]></Comment>
+          <BitSize>8</BitSize>
+          <BitOffs>32</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{EC00AD79-F585-18C0-80FE-9A857ED2A4A0}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{8430D0DA-EF87-9117-E8FD-9E8288E59083}" IecLibraryType="true" CName="ExtU_damper_twincat_T">ST_ExtU_damper_twincat_T</Name>
+        <Comment><![CDATA[Generated from type 'ExtU_damper_twincat_T']]></Comment>
+        <BitSize>128</BitSize>
+        <SubItem>
+          <Name>facc</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+          <Comment><![CDATA[Generated from item 'acc']]></Comment>
+          <BitSize>64</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>benable</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <Comment><![CDATA[Generated from item 'enable']]></Comment>
+          <BitSize>8</BitSize>
+          <BitOffs>64</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{3606C9AC-333D-174F-C804-537D65D84228}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{828B6541-EEE4-F9BA-8AE8-EF7C0CE366AF}" IecLibraryType="true" CName="ExtY_damper_twincat_T">ST_ExtY_damper_twincat_T</Name>
+        <Comment><![CDATA[Generated from type 'ExtY_damper_twincat_T']]></Comment>
+        <BitSize>16</BitSize>
+        <SubItem>
+          <Name>ntorque</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000006}">INT</Type>
+          <Comment><![CDATA[Generated from item 'torque']]></Comment>
+          <BitSize>16</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{5889BD33-9A59-913A-33DF-05AD89DBF086}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{B85EA9DC-4B13-FEA3-3577-E9AE1AF35FF4}" IecLibraryType="true" CName="P_damper_twincat_T">ST_P_damper_twincat_T</Name>
+        <Comment><![CDATA[Generated from type 'P_damper_twincat_T']]></Comment>
+        <BitSize>1600</BitSize>
+        <SubItem>
+          <Name>aK</Name>
+          <Type GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}">T_matrix_2_real_T</Type>
+          <Comment><![CDATA[Generated from item 'K']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>fLykyhatkk1_Y0</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+          <Comment><![CDATA[Generated from item 'Lykyhatkk1_Y0']]></Comment>
+          <BitSize>64</BitSize>
+          <BitOffs>128</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>aX0_Value</Name>
+          <Type GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}">T_matrix_2_real_T</Type>
+          <Comment><![CDATA[Generated from item 'X0_Value']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>192</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>fConstant_Value</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+          <Comment><![CDATA[Generated from item 'Constant_Value']]></Comment>
+          <BitSize>64</BitSize>
+          <BitOffs>320</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>fGain_Gain</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+          <Comment><![CDATA[Generated from item 'Gain_Gain']]></Comment>
+          <BitSize>64</BitSize>
+          <BitOffs>384</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>fSaturation_UpperSat</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+          <Comment><![CDATA[Generated from item 'Saturation_UpperSat']]></Comment>
+          <BitSize>64</BitSize>
+          <BitOffs>448</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>fSaturation_LowerSat</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+          <Comment><![CDATA[Generated from item 'Saturation_LowerSat']]></Comment>
+          <BitSize>64</BitSize>
+          <BitOffs>512</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>aA_Value</Name>
+          <Type GUID="{FD2C5221-1100-B06B-29A9-AF302BEBE3E5}">T_matrix_4_real_T</Type>
+          <Comment><![CDATA[Generated from item 'A_Value']]></Comment>
+          <BitSize>256</BitSize>
+          <BitOffs>576</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>aB_Value</Name>
+          <Type GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}">T_matrix_2_real_T</Type>
+          <Comment><![CDATA[Generated from item 'B_Value']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>832</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>aC_Value</Name>
+          <Type GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}">T_matrix_2_real_T</Type>
+          <Comment><![CDATA[Generated from item 'C_Value']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>960</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>aCovarianceZ_Value</Name>
+          <Type GUID="{FD2C5221-1100-B06B-29A9-AF302BEBE3E5}">T_matrix_4_real_T</Type>
+          <Comment><![CDATA[Generated from item 'CovarianceZ_Value']]></Comment>
+          <BitSize>256</BitSize>
+          <BitOffs>1088</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>aKalmanGainL_Value</Name>
+          <Type GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}">T_matrix_2_real_T</Type>
+          <Comment><![CDATA[Generated from item 'KalmanGainL_Value']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>1344</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>fD_Value</Name>
+          <Type GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</Type>
+          <Comment><![CDATA[Generated from item 'D_Value']]></Comment>
+          <BitSize>64</BitSize>
+          <BitOffs>1472</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bisSqrtUsed_Value</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <Comment><![CDATA[Generated from item 'isSqrtUsed_Value']]></Comment>
+          <BitSize>8</BitSize>
+          <BitOffs>1536</BitOffs>
+        </SubItem>
+        <SubItem>
+          <Name>bEnable_Value</Name>
+          <Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+          <Comment><![CDATA[Generated from item 'Enable_Value']]></Comment>
+          <BitSize>8</BitSize>
+          <BitOffs>1544</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{7497B397-869D-4DB5-1158-C2BAEAD6E4C7}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{D153283B-8779-768E-39E9-0F1B16F92D62}" IecLibraryType="true" CName="matrix_2_boolean_T">T_matrix_2_boolean_T</Name>
+        <Comment><![CDATA[Generated from type 'matrix_2_boolean_T']]></Comment>
+        <BitSize>16</BitSize>
+        <BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+        <ArrayInfo>
+          <LBound>0</LBound>
+          <Elements>2</Elements>
+        </ArrayInfo>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{15C87B13-3286-ABC9-A49D-07BC7C981298}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{C7EF2543-C739-8952-733D-1572581BBC47}" IecLibraryType="true" CName="XDis_damper_twincat_T">ST_XDis_damper_twincat_T</Name>
+        <Comment><![CDATA[Generated from type 'XDis_damper_twincat_T']]></Comment>
+        <BitSize>16</BitSize>
+        <SubItem>
+          <Name>aMemoryX_CSTATE</Name>
+          <Type GUID="{D153283B-8779-768E-39E9-0F1B16F92D62}">T_matrix_2_boolean_T</Type>
+          <Comment><![CDATA[Generated from item 'MemoryX_CSTATE']]></Comment>
+          <BitSize>16</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{527CC5B9-125D-F973-B36E-7250E7FEB3C8}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+      <DUT Folder="Duts">
+        <Name GUID="{166CB36B-3CA0-D473-F208-75678AEBA8A7}" IecLibraryType="true" CName="X_damper_twincat_T">ST_X_damper_twincat_T</Name>
+        <Comment><![CDATA[Generated from type 'X_damper_twincat_T']]></Comment>
+        <BitSize>128</BitSize>
+        <SubItem>
+          <Name>aMemoryX_CSTATE</Name>
+          <Type GUID="{C9DCC615-EAD1-3F12-5E15-E2F70E0D20B9}">T_matrix_2_real_T</Type>
+          <Comment><![CDATA[Generated from item 'MemoryX_CSTATE']]></Comment>
+          <BitSize>128</BitSize>
+          <BitOffs>0</BitOffs>
+        </SubItem>
+        <Properties>
+          <Property>
+            <Name>ModuleGenerator_DutShadow</Name>
+            <Value>{34FE7C5A-D74F-13DA-11F3-E8076FFBD7A7}</Value>
+          </Property>
+        </Properties>
+      </DUT>
+    </DUTs>
+  </Library>
+</TcModuleLibrary>
